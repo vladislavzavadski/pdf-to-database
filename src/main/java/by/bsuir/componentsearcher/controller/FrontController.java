@@ -9,6 +9,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
+import java.io.IOException;
+
 /**
  * Created by vladislav on 08.03.17.
  */
@@ -27,7 +29,7 @@ public class FrontController {
     }
 
     @RequestMapping(method = RequestMethod.POST)
-    public void insertFile(@RequestParam("file") MultipartFile multipartFile){
+    public void insertFile(@RequestParam("file") MultipartFile multipartFile) throws IOException {
         componentService.insertNewFile(multipartFile);
     }
 

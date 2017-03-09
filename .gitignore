@@ -4,6 +4,8 @@
 /target/
 .idea
 componentsearcher.iml
+*.pdf
+*.xls
 
 # BlueJ files
 *.ctxt
