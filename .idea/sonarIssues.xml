@@ -8,6 +8,11 @@
             <set />
           </value>
         </entry>
+        <entry key="/a.dummy">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/.gitignore">
           <value>
             <set />
@@ -74,6 +79,11 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/src/main/java/by/bsuir/componentsearcher/service/impl/ExcelParser.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/by/bsuir/componentsearcher/service/impl/ExcelRowMapper.java">
           <value>
             <set />
           </value>

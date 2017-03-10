@@ -9,7 +9,7 @@ import org.apache.poi.ss.usermodel.Row;
  * Created by vladislav on 09.03.17.
  */
 @org.springframework.stereotype.Component
-public class ExcelRowMapper implements RowMapper {
+public class ExcelRowMapper implements RowMapper<Row> {
 
     private static final String ARTICLE_NUMBER = "ARTICLE NUMBER";
 

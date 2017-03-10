@@ -6,7 +6,7 @@ import org.apache.poi.ss.usermodel.Row;
 /**
  * Created by vladislav on 09.03.17.
  */
-public interface RowMapper {
-    Component rowToObject(Row row);
-    boolean startScan(Row row);
+public interface RowMapper<T> {
+    Component rowToObject(T t);
+    boolean startScan(T t);
 }
