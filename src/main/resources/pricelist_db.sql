@@ -23,11 +23,11 @@ DROP TABLE IF EXISTS `component`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `component` (
-  `code` varchar(145) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `manufacturer` varchar(45) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `name` varchar(145) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `code` varchar(45) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `manufacturer` varchar(600) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `name` varchar(600) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `price` decimal(10,2) DEFAULT NULL,
-  `co_file_name` varchar(145) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `co_file_name` varchar(45) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`code`),
   KEY `fk_component_1_idx` (`co_file_name`),
   CONSTRAINT `fk_component_1` FOREIGN KEY (`co_file_name`) REFERENCES `file` (`fi_file_name`) ON DELETE CASCADE ON UPDATE CASCADE
