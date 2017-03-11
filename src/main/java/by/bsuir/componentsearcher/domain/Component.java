@@ -1,6 +1,8 @@
 package by.bsuir.componentsearcher.domain;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by vladislav on 08.03.17.
@@ -10,6 +12,20 @@ public class Component implements Serializable{
     private String manufacturer;
     private String name;
     private double price;
+    private List<Component> components;
+
+    public Component() {
+        components = new ArrayList<>();
+        components.add(this);
+    }
+
+    public List<Component> getComponents() {
+        return components;
+    }
+
+    public void setComponents(List<Component> components) {
+        this.components = components;
+    }
 
     public String getCode() {
         return code;

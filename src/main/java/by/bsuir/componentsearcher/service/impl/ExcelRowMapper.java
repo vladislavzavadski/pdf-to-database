@@ -12,6 +12,7 @@ import org.apache.poi.ss.usermodel.Row;
 public class ExcelRowMapper implements RowMapper<Row> {
 
     private static final String ARTICLE_NUMBER = "ARTICLE NUMBER";
+    private static final String EMPTY_STRING = " ";
 
     @Override
     public boolean startScan(Row row) {
@@ -34,7 +35,7 @@ public class ExcelRowMapper implements RowMapper<Row> {
         component.setName(cell.getStringCellValue());
 
         cell = row.getCell(2);
-        component.setName(component.getName() + " " + cell.getStringCellValue());
+        component.setName(component.getName() + EMPTY_STRING + cell.getStringCellValue());
 
         cell = row.getCell(3);
         if(cell.getCellType() == Cell.CELL_TYPE_NUMERIC){

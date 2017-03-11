@@ -3,7 +3,6 @@ package by.bsuir.componentsearcher;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-
 /**
  * Created by vladislav on 08.03.17.
  */
