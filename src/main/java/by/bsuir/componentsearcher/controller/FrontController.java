@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
+import java.util.List;
 
 /**
  * Created by vladislav on 08.03.17.
@@ -22,10 +23,10 @@ public class FrontController {
     private ComponentService componentService;
 
     @RequestMapping(value = "/{code}", method = RequestMethod.GET)
-    public ResponseEntity<Component> getByCode(@PathVariable("code") String code){
-        Component component = componentService.findByCode(code);
+    public ResponseEntity<List<Component>> getByCode(@PathVariable("code") String code){
+        List<Component> components = componentService.findByCode(code);
 
-        return new ResponseEntity<Component>(component, HttpStatus.OK);
+        return new ResponseEntity<>(components, HttpStatus.OK);
     }
 
     @RequestMapping(method = RequestMethod.POST)

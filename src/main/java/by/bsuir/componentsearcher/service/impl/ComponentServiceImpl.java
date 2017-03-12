@@ -26,9 +26,8 @@ public class ComponentServiceImpl implements ComponentService {
     private RowMapper rowMapper;
 
     @Override
-    public Component findByCode(String code) {
-        Component component = componentDao.findByCode(code);
-        return component;
+    public List<Component> findByCode(String code) {
+        return componentDao.findByCode(code);
     }
 
     @Override
