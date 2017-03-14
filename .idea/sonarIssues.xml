@@ -43,12 +43,27 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/by/bsuir/componentsearcher/controller/MappingController.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/main/java/by/bsuir/componentsearcher/dao/ComponentDao.java">
           <value>
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/by/bsuir/componentsearcher/dao/MappingDao.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/main/java/by/bsuir/componentsearcher/dao/impl/ComponentDaoImpl.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/by/bsuir/componentsearcher/dao/impl/MappingDaoImpl.java">
           <value>
             <set />
           </value>
@@ -59,6 +74,11 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/src/main/java/by/bsuir/componentsearcher/domain/ErrorResponse.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/by/bsuir/componentsearcher/domain/FieldMapping.java">
           <value>
             <set />
           </value>
@@ -74,6 +94,16 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/src/main/java/by/bsuir/componentsearcher/service/RowMapper.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/by/bsuir/componentsearcher/service/config/ServiceConfiguration.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/by/bsuir/componentsearcher/service/exception/WriterNotFoundException.java">
           <value>
             <set />
           </value>
@@ -99,6 +129,41 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/src/main/java/by/bsuir/componentsearcher/service/impl/XmlRowMapper.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/by/bsuir/componentsearcher/service/util/CodeFieldWriter.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/by/bsuir/componentsearcher/service/util/FieldWriter.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/by/bsuir/componentsearcher/service/util/FieldWriterFactory.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/by/bsuir/componentsearcher/service/util/ManufacturerFieldWriter.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/by/bsuir/componentsearcher/service/util/NameFieldWriter.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/by/bsuir/componentsearcher/service/util/PriceFieldWriter.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/by/bsuir/componentsearcher/service/util/WriterNotFoundException.java">
           <value>
             <set />
           </value>

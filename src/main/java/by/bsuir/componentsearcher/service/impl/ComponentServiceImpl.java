@@ -1,10 +1,14 @@
 package by.bsuir.componentsearcher.service.impl;
 
 import by.bsuir.componentsearcher.dao.ComponentDao;
+import by.bsuir.componentsearcher.dao.MappingDao;
 import by.bsuir.componentsearcher.domain.Component;
+import by.bsuir.componentsearcher.domain.FieldMapping;
 import by.bsuir.componentsearcher.service.ComponentService;
 import by.bsuir.componentsearcher.service.Parser;
 import by.bsuir.componentsearcher.service.RowMapper;
+import by.bsuir.componentsearcher.service.exception.UnknownContentTypeException;
+import by.bsuir.componentsearcher.service.util.ParserFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -23,7 +27,13 @@ public class ComponentServiceImpl implements ComponentService {
     private ComponentDao componentDao;
 
     @Autowired
+    private MappingDao mappingDao;
+
+    @Autowired
     private RowMapper rowMapper;
+
+    @Autowired
+    private ParserFactory parserFactory;
 
     @Override
     public List<Component> findByCode(String code) {
@@ -32,18 +42,23 @@ public class ComponentServiceImpl implements ComponentService {
 
     @Override
     @Transactional
-    public void insertNewFile(MultipartFile multipartFile) throws IOException {
+    public void insertNewFile(FieldMapping fieldMapping, MultipartFile multipartFile) throws IOException, UnknownContentTypeException {
         //TODO: распарсить файл
-        Parser parser = new ExcelParser();
+        if(fieldMapping != null){
+            componentDao.createFile(multipartFile.getOriginalFilename());
+            mappingDao.addMapping(fieldMapping, multipartFile.getOriginalFilename());
+        }
+        else {
+            fieldMapping = mappingDao.getFileFieldMapping(multipartFile.getOriginalFilename());
+        }
+
+        Parser parser = parserFactory.getParser(multipartFile.getContentType());
         List<Component> components = parser.parse(multipartFile.getInputStream(), rowMapper);
-        componentDao.deleteFile(multipartFile.getOriginalFilename());
+
+        componentDao.deleteFileComponents(multipartFile.getOriginalFilename());
         componentDao.createFile(multipartFile.getOriginalFilename());
-        components.forEach(e -> e.setManufacturer("Wever&sucre"));
+
         componentDao.insertComponents(components, multipartFile.getOriginalFilename());
-
-    }
-
-    private void setManufacturerName(List<Component> components, String manufacturerName){
 
     }
 

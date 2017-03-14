@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="pricelist_db@localhost [2]">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="4.0">
+    <root id="1"/>
+    <schema id="2" parent="1" name="pricelist_db">
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <schema id="3" parent="1" name="bd_lab_schema"/>
+    <schema id="4" parent="1" name="bd_pharmacy"/>
+    <schema id="5" parent="1" name="information_schema"/>
+    <schema id="6" parent="1" name="jpa_test"/>
+    <schema id="7" parent="1" name="mysql"/>
+    <schema id="8" parent="1" name="online_pharmacy"/>
+    <schema id="9" parent="1" name="online_pharmacy_test"/>
+    <schema id="10" parent="1" name="performance_schema"/>
+    <table id="11" parent="2" name="component"/>
+    <table id="12" parent="2" name="file"/>
+    <column id="13" parent="11" name="code">
+      <Position>1</Position>
+      <DataType>varchar(45)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="14" parent="11" name="manufacturer">
+      <Position>2</Position>
+      <DataType>varchar(600)|0</DataType>
+    </column>
+    <column id="15" parent="11" name="name">
+      <Position>3</Position>
+      <DataType>varchar(600)|0</DataType>
+    </column>
+    <column id="16" parent="11" name="price">
+      <Position>4</Position>
+      <DataType>decimal(10,2)|0</DataType>
+    </column>
+    <column id="17" parent="11" name="co_file_name">
+      <Position>5</Position>
+      <DataType>varchar(45)|0</DataType>
+    </column>
+    <index id="18" parent="11" name="fk_component_1_idx">
+      <ColNames>co_file_name</ColNames>
+    </index>
+    <key id="19" parent="11" name="PRIMARY">
+      <ColNames>code</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="20" parent="11" name="fk_component_1">
+      <ColNames>co_file_name</ColNames>
+      <RefSchemaName>pricelist_db</RefSchemaName>
+      <RefTableName>file</RefTableName>
+      <RefColNames>fi_file_name</RefColNames>
+      <OnUpdate>update</OnUpdate>
+      <OnDelete>delete</OnDelete>
+    </foreign-key>
+    <column id="21" parent="12" name="fi_file_name">
+      <Position>1</Position>
+      <DataType>varchar(45)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="22" parent="12" name="PRIMARY">
+      <ColNames>fi_file_name</ColNames>
+      <Primary>1</Primary>
+    </key>
+  </database-model>
+</dataSource>

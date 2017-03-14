@@ -10,7 +10,7 @@ import java.util.List;
 public interface ComponentDao {
     List<Component> findByCode(String code);
 
-    void deleteFile(String fileName);
+    void deleteFileComponents(String fileName);
 
     void createFile(String fileName);
 

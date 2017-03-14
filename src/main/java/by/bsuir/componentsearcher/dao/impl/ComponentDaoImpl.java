@@ -1,5 +1,6 @@
 package by.bsuir.componentsearcher.dao.impl;
 
+import by.bsuir.componentsearcher.ColumnName;
 import by.bsuir.componentsearcher.dao.ComponentDao;
 import by.bsuir.componentsearcher.domain.Component;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,18 +28,13 @@ public class ComponentDaoImpl implements ComponentDao {
     private static final String CREATE_FILE_QUERY = "INSERT INTO file (fi_file_name) VALUES (?) on duplicate KEY " +
             "update fi_file_name=VALUES(fi_file_name);";
 
-    private static final String CODE = "code";
-    private static final String MANUFACTURER = "manufacturer";
-    private static final String NAME = "name";
-    private static final String PRICE = "price";
-
     private static final RowMapper<Component> rowMapper = (rs, rowNum) -> {
         Component component = new Component();
 
-        component.setCode(rs.getString(CODE));
-        component.setManufacturer(rs.getString(MANUFACTURER));
-        component.setName(rs.getString(NAME));
-        component.setPrice(rs.getDouble(PRICE));
+        component.setCode(rs.getString(ColumnName.CODE));
+        component.setManufacturer(rs.getString(ColumnName.MANUFACTURER));
+        component.setName(rs.getString(ColumnName.NAME));
+        component.setPrice(rs.getDouble(ColumnName.PRICE));
 
         return component;
     };
@@ -56,7 +52,7 @@ public class ComponentDaoImpl implements ComponentDao {
     }
 
     @Override
-    public void deleteFile(String fileName){
+    public void deleteFileComponents(String fileName){
         jdbcTemplate.update(DELETE_FILE_QUERY, fileName);
     }
 
