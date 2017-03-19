@@ -58,7 +58,7 @@ public class ComponentServiceImpl implements ComponentService {
 
             componentDao.insertComponents(components, multipartFile.getOriginalFilename());
 
-            if (components.size() < 1000){
+            if (components.size() < LIMIT){
                 return;
             }
         }
