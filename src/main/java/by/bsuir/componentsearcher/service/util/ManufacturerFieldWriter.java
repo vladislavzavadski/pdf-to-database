@@ -9,6 +9,12 @@ public class ManufacturerFieldWriter implements FieldWriter {
 
     @Override
     public void setField(Component component, String fieldValue) {
-        component.setManufacturer(fieldValue);
+
+        if(component.getManufacturer() == null) {
+            component.setManufacturer(fieldValue);
+        }
+        else {
+            component.setManufacturer(component.getManufacturer() + EMPTY_STRING + fieldValue);
+        }
     }
 }

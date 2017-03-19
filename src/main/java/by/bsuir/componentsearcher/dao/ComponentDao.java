@@ -8,7 +8,7 @@ import java.util.List;
  * Created by vladislav on 08.03.17.
  */
 public interface ComponentDao {
-    List<Component> findByCode(String code);
+    Component findByCode(String code);
 
     void deleteFileComponents(String fileName);
 

@@ -6,12 +6,17 @@ import by.bsuir.componentsearcher.domain.Component;
 import by.bsuir.componentsearcher.domain.FieldMapping;
 import by.bsuir.componentsearcher.service.Parser;
 import by.bsuir.componentsearcher.service.RowMapper;
+import by.bsuir.componentsearcher.service.exception.WriterNotFoundException;
+import by.bsuir.componentsearcher.service.util.FieldWriter;
+import by.bsuir.componentsearcher.service.util.FieldWriterMapper;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.net.InetAddress;
 import java.util.*;
 
 /**
@@ -20,27 +25,43 @@ import java.util.*;
 @org.springframework.stereotype.Component
 public class ExcelParser implements Parser {
 
-    public static final String PLUS = "\\+";
+    private static final String PLUS = "\\+";
+
+    @Autowired
+    private FieldWriterMapper fieldWriterMapper;
 
     @Override
-    public List<Component> parse(InputStream inputStream, RowMapper<Row> rowMapper, FieldMapping fieldMapping) throws IOException {
+    public List<Component> parse(InputStream inputStream, RowMapper<Row> rowMapper, FieldMapping fieldMapping) throws IOException, WriterNotFoundException {
+
         boolean canStartScan = false;
         List<Component> components = new ArrayList<>();
         HSSFWorkbook hssfWorkbook = new HSSFWorkbook(inputStream);
 
         Sheet sheet = hssfWorkbook.getSheetAt(0);
+        Map<String, List<String>> mapFieldMapping = getMapFieldMapping(fieldMapping);
+
+        Map<Integer, FieldWriter> fieldWriterMap = null;
 
         for (Row row : sheet) {
 
             if(canStartScan){
-                Component component = rowMapper.rowToObject(row, getMapFieldMapping(fieldMapping));
+                Component component = rowMapper.rowToObject(row, fieldWriterMap);
                 components.add(component);
             }
             else {
-                canStartScan = rowMapper.startScan(row, getMapFieldMapping(fieldMapping));
+                canStartScan = rowMapper.startScan(row, mapFieldMapping);
+
+                if(canStartScan){
+                    fieldWriterMap = fieldWriterMapper.map(mapFieldMapping, row);
+                }
             }
 
         }
+
+        if(fieldMapping.getManufacturer().contains(QUOTE)){
+            components.forEach(e -> e.setManufacturer(fieldMapping.getManufacturer().replaceAll(QUOTE, EMPTY)));
+        }
+
         return components;
     }
 
@@ -49,7 +70,11 @@ public class ExcelParser implements Parser {
 
         map.put(ColumnName.NAME, Arrays.asList(fieldMapping.getName().trim().split(PLUS)));
         map.put(ColumnName.CODE, Arrays.asList(fieldMapping.getCode().trim().split(PLUS)));
-        map.put(ColumnName.MANUFACTURER, Arrays.asList(fieldMapping.getManufacturer().trim().split(PLUS)));
+
+        if(!fieldMapping.getManufacturer().contains(QUOTE)) {
+            map.put(ColumnName.MANUFACTURER, Arrays.asList(fieldMapping.getManufacturer().trim().split(PLUS)));
+        }
+
         map.put(ColumnName.PRICE, Arrays.asList(fieldMapping.getPrice().trim().split(PLUS)));
         
         return map;

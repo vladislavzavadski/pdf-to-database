@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 public final class ParserFactory {
     private static final ParserFactory parserFactory = new ParserFactory();
     private static final String CONTENT_EXCEL = "application/vnd.ms-excel";
+    private static final String SPRED_SHEET = "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet";
 
     @Autowired
     private Parser excelParser;
@@ -23,6 +24,9 @@ public final class ParserFactory {
     public Parser getParser(String contentType) throws UnknownContentTypeException {
         switch (contentType){
             case CONTENT_EXCEL:{
+                return excelParser;
+            }
+            case SPRED_SHEET:{
                 return excelParser;
             }
             default:{

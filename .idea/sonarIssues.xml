@@ -88,6 +88,11 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/by/bsuir/componentsearcher/service/MappingService.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/main/java/by/bsuir/componentsearcher/service/Parser.java">
           <value>
             <set />
@@ -123,6 +128,11 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/by/bsuir/componentsearcher/service/impl/MappingServiceImpl.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/main/java/by/bsuir/componentsearcher/service/impl/RowMapper.java">
           <value>
             <set />
@@ -148,12 +158,22 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/by/bsuir/componentsearcher/service/util/FieldWriterMapperImpl.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/main/java/by/bsuir/componentsearcher/service/util/ManufacturerFieldWriter.java">
           <value>
             <set />
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/src/main/java/by/bsuir/componentsearcher/service/util/NameFieldWriter.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/by/bsuir/componentsearcher/service/util/ParserFactory.java">
           <value>
             <set />
           </value>

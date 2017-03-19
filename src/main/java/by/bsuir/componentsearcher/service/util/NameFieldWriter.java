@@ -9,6 +9,11 @@ public class NameFieldWriter implements FieldWriter {
 
     @Override
     public void setField(Component component, String fieldValue) {
-        component.setName(fieldValue);
+        if(component.getName() == null) {
+            component.setName(fieldValue);
+        }
+        else {
+            component.setName(component.getName() + EMPTY_STRING + fieldValue);
+        }
     }
 }

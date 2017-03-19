@@ -8,6 +8,7 @@ import by.bsuir.componentsearcher.service.ComponentService;
 import by.bsuir.componentsearcher.service.Parser;
 import by.bsuir.componentsearcher.service.RowMapper;
 import by.bsuir.componentsearcher.service.exception.UnknownContentTypeException;
+import by.bsuir.componentsearcher.service.exception.WriterNotFoundException;
 import by.bsuir.componentsearcher.service.util.ParserFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -36,28 +37,20 @@ public class ComponentServiceImpl implements ComponentService {
     private ParserFactory parserFactory;
 
     @Override
-    public List<Component> findByCode(String code) {
+    public Component findByCode(String code) {
         return componentDao.findByCode(code);
     }
 
     @Override
     @Transactional
-    public void insertNewFile(FieldMapping fieldMapping, MultipartFile multipartFile) throws IOException, UnknownContentTypeException {
-        //TODO: распарсить файл
-        if(fieldMapping != null){
-            componentDao.createFile(multipartFile.getOriginalFilename());
-            mappingDao.addMapping(fieldMapping, multipartFile.getOriginalFilename());
-        }
-        else {
-            fieldMapping = mappingDao.getFileFieldMapping(multipartFile.getOriginalFilename());
-        }
+    public void insertNewFile(MultipartFile multipartFile) throws IOException, UnknownContentTypeException, WriterNotFoundException {
 
+        FieldMapping fieldMapping = mappingDao.getFileFieldMapping(multipartFile.getOriginalFilename());
         Parser parser = parserFactory.getParser(multipartFile.getContentType());
-        List<Component> components = parser.parse(multipartFile.getInputStream(), rowMapper);
+        List<Component> components = parser.parse(multipartFile.getInputStream(), rowMapper, fieldMapping);
 
         componentDao.deleteFileComponents(multipartFile.getOriginalFilename());
         componentDao.createFile(multipartFile.getOriginalFilename());
-
         componentDao.insertComponents(components, multipartFile.getOriginalFilename());
 
     }

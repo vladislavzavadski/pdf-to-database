@@ -4,6 +4,7 @@ import by.bsuir.componentsearcher.domain.Component;
 import by.bsuir.componentsearcher.domain.FieldMapping;
 import by.bsuir.componentsearcher.service.ComponentService;
 import by.bsuir.componentsearcher.service.exception.UnknownContentTypeException;
+import by.bsuir.componentsearcher.service.exception.WriterNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.http.HttpStatus;
@@ -24,37 +25,31 @@ import java.util.List;
 public class FrontController {
 
     private static final String SUCCESS = "success";
-    private static final String ERROR = "error";
 
     @Autowired
     private ComponentService componentService;
 
     @RequestMapping(value = "/{code}", method = RequestMethod.GET)
-    public ResponseEntity<List<Component>> getByCode(@PathVariable("code") String code){
-        List<Component> components = componentService.findByCode(code);
-        return new ResponseEntity<>(components, HttpStatus.OK);
+    public ResponseEntity<Component> getByCode(@PathVariable("code") String code){
+        Component component = componentService.findByCode(code);
+        return new ResponseEntity<>(component, HttpStatus.OK);
     }
 
     @RequestMapping(method = RequestMethod.POST)
-    public ResponseEntity<String> insertFile(@Valid FieldMapping fieldMapping, @RequestParam("file") MultipartFile multipartFile, Errors errors)
-            throws IOException, UnknownContentTypeException {
+    public ResponseEntity<String> insertFile(@RequestParam("file") MultipartFile multipartFile)
+            throws IOException, UnknownContentTypeException, WriterNotFoundException {
 
-        if(errors.hasErrors()){
-            return new ResponseEntity<>(ERROR, HttpStatus.BAD_REQUEST);
-        }
-        else {
-            componentService.insertNewFile(fieldMapping, multipartFile);
-            return new ResponseEntity<>(SUCCESS, HttpStatus.OK);
-        }
+        componentService.insertNewFile(multipartFile);
+        return new ResponseEntity<>(SUCCESS, HttpStatus.OK);
     }
 
     @ExceptionHandler(EmptyResultDataAccessException.class)
     public ResponseEntity<String> componentNotExist(EmptyResultDataAccessException ex){
-        return new ResponseEntity<>(ex.getMessage(), HttpStatus.NOT_FOUND);
+        return new ResponseEntity<>("Data not exist", HttpStatus.NOT_FOUND);
     }
 
     @ExceptionHandler(UnknownContentTypeException.class)
     public ResponseEntity<String> unknownContentTypeException(UnknownContentTypeException ex){
-        return new ResponseEntity<>(ex.getMessage(), HttpStatus.BAD_REQUEST);
+        return new ResponseEntity<>("Invalid content type", HttpStatus.BAD_REQUEST);
     }
 }

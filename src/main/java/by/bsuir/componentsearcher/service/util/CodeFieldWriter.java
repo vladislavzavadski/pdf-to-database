@@ -9,6 +9,12 @@ public class CodeFieldWriter implements FieldWriter {
 
     @Override
     public void setField(Component component, String fieldValue) {
-        component.setCode(fieldValue);
+
+        if(component.getCode() == null) {
+            component.setCode(fieldValue);
+        }
+        else {
+            component.setCode(component.getCode() + EMPTY_STRING + fieldValue);
+        }
     }
 }

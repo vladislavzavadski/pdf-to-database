@@ -18,7 +18,7 @@ import java.util.List;
 public class ComponentDaoImpl implements ComponentDao {
 
     private static final String SEARCH_COMPONENT_BY_CODE_QUERY = "SELECT code, manufacturer, name, price from component" +
-            " where code like ?;";
+            " where code = ?;";
 
     private static final String DELETE_FILE_QUERY = "delete from component where co_file_name = ?;";
 
@@ -47,8 +47,8 @@ public class ComponentDaoImpl implements ComponentDao {
     }
 
     @Override
-    public List<Component> findByCode(String code) {
-        return jdbcTemplate.query(SEARCH_COMPONENT_BY_CODE_QUERY, new Object[]{"%" + code + "%"}, rowMapper);
+    public Component findByCode(String code) {
+        return jdbcTemplate.queryForObject(SEARCH_COMPONENT_BY_CODE_QUERY, new Object[]{code}, rowMapper);
     }
 
     @Override
