@@ -5,6 +5,7 @@ import by.bsuir.componentsearcher.domain.Component;
 import by.bsuir.componentsearcher.domain.FieldMapping;
 import by.bsuir.componentsearcher.service.Parser;
 import by.bsuir.componentsearcher.service.RowMapper;
+import by.bsuir.componentsearcher.service.exception.CanNotParseException;
 import by.bsuir.componentsearcher.service.exception.UnknownContentTypeException;
 import by.bsuir.componentsearcher.service.exception.WriterNotFoundException;
 import by.bsuir.componentsearcher.service.util.FieldMappingUtil;
@@ -14,7 +15,6 @@ import by.bsuir.componentsearcher.service.util.WorkBookFactory;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
-import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -33,12 +33,14 @@ public class ExcelParser implements Parser {
     @Autowired
     private WorkBookFactory workBookFactory;
 
-    @Override
-    public List<Component> parse(MultipartFile multipartFile, RowMapper<Row> rowMapper, FieldMapping fieldMapping)
-            throws IOException, WriterNotFoundException, UnknownContentTypeException {
+    @Autowired
+    private RowMapper<Row> rowMapper;
 
-        boolean canStartScan = false;
-        List<Component> components = new ArrayList<>();
+    @Override
+    public List<Component> parse(MultipartFile multipartFile, FieldMapping fieldMapping,
+                                 int limit, int startFrom)
+            throws IOException, WriterNotFoundException, UnknownContentTypeException, CanNotParseException {
+
         Workbook workBook = workBookFactory.getWorkBook(multipartFile);
 
         Sheet sheet = workBook.getSheetAt(0);
@@ -47,29 +49,43 @@ public class ExcelParser implements Parser {
 
         List<String> columnNames = FieldMappingUtil.getFieldColumnNames(mapFieldMapping);
 
-        Map<Integer, FieldWriter> fieldWriterMap = null;
+        int startScanRow = getStartScanRowNumber(sheet, columnNames);
 
-        for (Row row : sheet) {
+        Map<Integer, FieldWriter> fieldWriterMap = fieldWriterMapper.map(mapFieldMapping, sheet.getRow(startScanRow));
 
-            if(canStartScan){
-                Component component = rowMapper.rowToObject(row, fieldWriterMap);
-                components.add(component);
-            }
-            else {
-                canStartScan = rowMapper.startScan(row, columnNames);
-
-                if(canStartScan){
-                    fieldWriterMap = fieldWriterMapper.map(mapFieldMapping, row);
-                }
-            }
-
-        }
+        List<Component> result = scanComponents(sheet, fieldWriterMap, limit, startScanRow+1+startFrom);
 
         if(fieldMapping.getManufacturer().contains(QUOTE)){
-            components.forEach(e -> e.setManufacturer(fieldMapping.getManufacturer().replaceAll(QUOTE, EMPTY)));
+            result.forEach(e -> e.setManufacturer(fieldMapping.getManufacturer().replaceAll(QUOTE, EMPTY)));
         }
 
-        return components;
+        return result;
+    }
+
+    private int getStartScanRowNumber(Sheet sheet, List<String> columnNames) throws CanNotParseException {
+
+        for(int i=0; i<sheet.getPhysicalNumberOfRows(); i++){
+
+            if(rowMapper.startScan(sheet.getRow(i), columnNames)){
+                return i;
+            }
+
+        }
+
+        throw new CanNotParseException("Current file is empty or invalid field mapping");
+    }
+
+    private List<Component> scanComponents(Sheet sheet, Map<Integer, FieldWriter> fieldWriterMap, int limit, int startFrom){
+
+        List<Component> result = new ArrayList<>();
+
+        for (int i=startFrom; i<sheet.getPhysicalNumberOfRows() && (i-startFrom < limit); i++){
+            Component component = rowMapper.rowToObject(sheet.getRow(i), fieldWriterMap);
+            result.add(component);
+        }
+
+        return result;
+
     }
 
 }

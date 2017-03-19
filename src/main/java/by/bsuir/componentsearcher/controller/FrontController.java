@@ -38,7 +38,7 @@ public class FrontController {
 
     @RequestMapping(method = RequestMethod.POST)
     public ResponseEntity<String> insertFile(@RequestParam("file") MultipartFile multipartFile)
-            throws IOException, UnknownContentTypeException, WriterNotFoundException, CanNotParseException {
+            throws IOException, UnknownContentTypeException, WriterNotFoundException, CanNotParseException, InterruptedException {
 
         componentService.insertNewFile(multipartFile);
         return new ResponseEntity<>(SUCCESS, HttpStatus.OK);

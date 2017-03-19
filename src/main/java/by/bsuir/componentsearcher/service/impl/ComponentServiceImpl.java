@@ -49,15 +49,19 @@ public class ComponentServiceImpl implements ComponentService {
 
         FieldMapping fieldMapping = mappingDao.getFileFieldMapping(multipartFile.getOriginalFilename());
         Parser parser = parserFactory.getParser(multipartFile.getContentType());
-        List<Component> components = parser.parse(multipartFile, rowMapper, fieldMapping);
-
-        if(components.isEmpty()){
-            throw new CanNotParseException("Current file is empty or invalid field mapping");
-        }
 
         componentDao.deleteFileComponents(multipartFile.getOriginalFilename());
         componentDao.createFile(multipartFile.getOriginalFilename());
-        componentDao.insertComponents(components, multipartFile.getOriginalFilename());
+
+        for (int i=0; ; i++){
+            List<Component> components = parser.parse(multipartFile, fieldMapping, LIMIT, i*LIMIT);
+
+            componentDao.insertComponents(components, multipartFile.getOriginalFilename());
+
+            if (components.size() < 1000){
+                return;
+            }
+        }
 
     }
 

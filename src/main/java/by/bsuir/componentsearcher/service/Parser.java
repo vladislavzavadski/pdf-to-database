@@ -2,6 +2,7 @@ package by.bsuir.componentsearcher.service;
 
 import by.bsuir.componentsearcher.domain.Component;
 import by.bsuir.componentsearcher.domain.FieldMapping;
+import by.bsuir.componentsearcher.service.exception.CanNotParseException;
 import by.bsuir.componentsearcher.service.exception.UnknownContentTypeException;
 import by.bsuir.componentsearcher.service.exception.WriterNotFoundException;
 import org.apache.poi.ss.usermodel.Row;
@@ -17,5 +18,5 @@ public interface Parser {
     String PLUS = "\\+";
     String QUOTE = "\"";
     String EMPTY = "";
-    List<Component> parse(MultipartFile multipartFile, RowMapper<Row> rowMapper, FieldMapping fieldMapping) throws IOException, WriterNotFoundException, UnknownContentTypeException;
+    List<Component> parse(MultipartFile multipartFile, FieldMapping fieldMapping, int limit, int startFrom) throws IOException, WriterNotFoundException, UnknownContentTypeException, CanNotParseException;
 }
