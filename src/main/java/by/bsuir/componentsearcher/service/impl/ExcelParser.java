@@ -38,10 +38,13 @@ public class ExcelParser implements Parser {
 
         boolean canStartScan = false;
         List<Component> components = new ArrayList<>();
-        Workbook hssfWorkbook = workBookFactory.getWorkBook(multipartFile);
+        Workbook workBook = workBookFactory.getWorkBook(multipartFile);
 
-        Sheet sheet = hssfWorkbook.getSheetAt(0);
+        Sheet sheet = workBook.getSheetAt(0);
+
         Map<String, List<String>> mapFieldMapping = FieldMappingUtil.getMapFieldMapping(fieldMapping);
+
+        List<String> columnNames = FieldMappingUtil.getFieldColumnNames(mapFieldMapping);
 
         Map<Integer, FieldWriter> fieldWriterMap = null;
 
@@ -52,7 +55,7 @@ public class ExcelParser implements Parser {
                 components.add(component);
             }
             else {
-                canStartScan = rowMapper.startScan(row, mapFieldMapping);
+                canStartScan = rowMapper.startScan(row, columnNames);
 
                 if(canStartScan){
                     fieldWriterMap = fieldWriterMapper.map(mapFieldMapping, row);

@@ -3,10 +3,7 @@ package by.bsuir.componentsearcher.service.util;
 import by.bsuir.componentsearcher.ColumnName;
 import by.bsuir.componentsearcher.domain.FieldMapping;
 
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 import static by.bsuir.componentsearcher.service.Parser.PLUS;
 import static by.bsuir.componentsearcher.service.Parser.QUOTE;
@@ -29,5 +26,15 @@ public class FieldMappingUtil {
         map.put(ColumnName.PRICE, Arrays.asList(fieldMapping.getPrice().trim().split(PLUS)));
 
         return map;
+    }
+
+    public static List<String> getFieldColumnNames(Map<String, List<String>> fieldMapping){
+        List<String> result = new ArrayList<>();
+
+        for (List<String> columns : fieldMapping.values()){
+            result.addAll(columns);
+        }
+
+        return result;
     }
 }

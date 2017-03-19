@@ -18,20 +18,17 @@ import java.util.Map;
 public class ExcelRowMapper implements RowMapper<Row> {
 
     @Override
-    public boolean startScan(Row row, Map<String, List<String>> fieldMapping) {
-        List<String> columns = new ArrayList<>();
+    public boolean startScan(Row row, List<String> columns) {
 
-        for (List<String> strings: fieldMapping.values()) {
-            columns.addAll(strings);
-        }
+        List<String> temp = new ArrayList<>(columns);
 
         for (Cell cell : row){
             if(cell != null && cell.getCellType() == Cell.CELL_TYPE_STRING){
-                columns.remove(cell.getStringCellValue().replace('\n', ' ').replaceAll(EMPTY_SUMBOL_REG_EXP, SPACE));
+                temp.remove(cell.getStringCellValue().replace('\n', ' ').replaceAll(EMPTY_SUMBOL_REG_EXP, SPACE));
             }
         }
 
-        return columns.isEmpty();
+        return temp.isEmpty();
     }
 
     @Override

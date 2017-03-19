@@ -13,5 +13,5 @@ public interface RowMapper<T> {
     String SPACE = " ";
     String EMPTY_SUMBOL_REG_EXP = "[\\s]{2,}";
     Component rowToObject(T t, Map<Integer, FieldWriter> fieldWriterMap);
-    boolean startScan(T t, Map<String, List<String>> fieldMapping);
+    boolean startScan(T t, List<String> columns);
 }
