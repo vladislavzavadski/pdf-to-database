@@ -15,11 +15,11 @@
         <property name="yearIsDateType" value="false" />
       </driver-properties>
     </data-source>
-    <data-source source="LOCAL" name="pricelist_db@localhost [2]" uuid="d7522b88-d741-480c-b50f-7eadcb80843e">
+    <data-source source="LOCAL" name="heroku_972ed263c1228a7@us-cdbr-iron-east-03.cleardb.net" uuid="8b8a05e1-363f-4de1-873e-2a857d4ecd8b">
       <driver-ref>mysql</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
-      <jdbc-url>jdbc:mysql://localhost:3306/pricelist_db</jdbc-url>
+      <jdbc-url>jdbc:mysql://us-cdbr-iron-east-03.cleardb.net:3306/heroku_972ed263c1228a7</jdbc-url>
       <driver-properties>
         <property name="autoReconnect" value="true" />
         <property name="zeroDateTimeBehavior" value="convertToNull" />

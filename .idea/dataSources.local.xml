@@ -11,15 +11,15 @@
       <user-name>root</user-name>
       <resolve-scope>pricelist_db:</resolve-scope>
     </data-source>
-    <data-source name="pricelist_db@localhost [2]" uuid="d7522b88-d741-480c-b50f-7eadcb80843e">
-      <database-info product="MySQL" version="5.5.5-10.1.21-MariaDB" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.35 ( Revision: 5fb9c5849535c13917c2cf9baaece6ef9693ef27 )">
+    <data-source name="heroku_972ed263c1228a7@us-cdbr-iron-east-03.cleardb.net" uuid="8b8a05e1-363f-4de1-873e-2a857d4ecd8b">
+      <database-info product="MySQL" version="5.5.45-log" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.35 ( Revision: 5fb9c5849535c13917c2cf9baaece6ef9693ef27 )">
         <extra-name-characters>#@</extra-name-characters>
         <identifier-quote-string>`</identifier-quote-string>
       </database-info>
-      <case-sensitivity plain-identifiers="exact" quoted-identifiers="exact" />
+      <case-sensitivity plain-identifiers="lower" quoted-identifiers="lower" />
       <secret-storage>master_key</secret-storage>
-      <user-name>root</user-name>
-      <resolve-scope>pricelist_db:</resolve-scope>
+      <user-name>b15d9815700aa0</user-name>
+      <resolve-scope>heroku_972ed263c1228a7:</resolve-scope>
     </data-source>
   </component>
 </project>
