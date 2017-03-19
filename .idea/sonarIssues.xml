@@ -28,6 +28,11 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/by/bsuir/componentsearcher/ContentType.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/main/java/by/bsuir/componentsearcher/Main.java">
           <value>
             <set />
@@ -108,6 +113,11 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/by/bsuir/componentsearcher/service/exception/CanNotParseException.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/main/java/by/bsuir/componentsearcher/service/exception/WriterNotFoundException.java">
           <value>
             <set />
@@ -148,6 +158,11 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/by/bsuir/componentsearcher/service/util/FieldMappingUtil.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/main/java/by/bsuir/componentsearcher/service/util/FieldWriter.java">
           <value>
             <set />
@@ -179,6 +194,11 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/src/main/java/by/bsuir/componentsearcher/service/util/PriceFieldWriter.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/by/bsuir/componentsearcher/service/util/WorkBookFactory.java">
           <value>
             <set />
           </value>

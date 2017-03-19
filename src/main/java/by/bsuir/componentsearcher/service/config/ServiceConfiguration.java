@@ -46,4 +46,9 @@ public class ServiceConfiguration {
     public FieldWriter priceFieldWriter(){
         return new PriceFieldWriter();
     }
+
+    @Bean
+    public WorkBookFactory workBookFactory(){
+        return WorkBookFactory.getInstance();
+    }
 }

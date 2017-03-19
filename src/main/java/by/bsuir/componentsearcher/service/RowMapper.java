@@ -10,6 +10,8 @@ import java.util.Map;
  * Created by vladislav on 09.03.17.
  */
 public interface RowMapper<T> {
+    String SPACE = " ";
+    String EMPTY_SUMBOL_REG_EXP = "[\\s]{2,}";
     Component rowToObject(T t, Map<Integer, FieldWriter> fieldWriterMap);
     boolean startScan(T t, Map<String, List<String>> fieldMapping);
 }

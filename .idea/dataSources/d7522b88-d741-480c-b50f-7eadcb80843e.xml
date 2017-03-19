@@ -15,36 +15,37 @@
     <schema id="9" parent="1" name="online_pharmacy_test"/>
     <schema id="10" parent="1" name="performance_schema"/>
     <table id="11" parent="2" name="component"/>
-    <table id="12" parent="2" name="file"/>
-    <column id="13" parent="11" name="code">
+    <table id="12" parent="2" name="field_mapping"/>
+    <table id="13" parent="2" name="file"/>
+    <column id="14" parent="11" name="code">
       <Position>1</Position>
       <DataType>varchar(45)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="14" parent="11" name="manufacturer">
+    <column id="15" parent="11" name="manufacturer">
       <Position>2</Position>
       <DataType>varchar(600)|0</DataType>
     </column>
-    <column id="15" parent="11" name="name">
+    <column id="16" parent="11" name="name">
       <Position>3</Position>
       <DataType>varchar(600)|0</DataType>
     </column>
-    <column id="16" parent="11" name="price">
+    <column id="17" parent="11" name="price">
       <Position>4</Position>
       <DataType>decimal(10,2)|0</DataType>
     </column>
-    <column id="17" parent="11" name="co_file_name">
+    <column id="18" parent="11" name="co_file_name">
       <Position>5</Position>
       <DataType>varchar(45)|0</DataType>
     </column>
-    <index id="18" parent="11" name="fk_component_1_idx">
+    <index id="19" parent="11" name="fk_component_1_idx">
       <ColNames>co_file_name</ColNames>
     </index>
-    <key id="19" parent="11" name="PRIMARY">
+    <key id="20" parent="11" name="PRIMARY">
       <ColNames>code</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="20" parent="11" name="fk_component_1">
+    <foreign-key id="21" parent="11" name="fk_component_1">
       <ColNames>co_file_name</ColNames>
       <RefSchemaName>pricelist_db</RefSchemaName>
       <RefTableName>file</RefTableName>
@@ -52,12 +53,49 @@
       <OnUpdate>update</OnUpdate>
       <OnDelete>delete</OnDelete>
     </foreign-key>
-    <column id="21" parent="12" name="fi_file_name">
+    <column id="22" parent="12" name="fm_file_name">
       <Position>1</Position>
       <DataType>varchar(45)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <key id="22" parent="12" name="PRIMARY">
+    <column id="23" parent="12" name="fm_manufacturer">
+      <Position>2</Position>
+      <DataType>varchar(300)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="24" parent="12" name="fm_code">
+      <Position>3</Position>
+      <DataType>varchar(300)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="25" parent="12" name="fm_name">
+      <Position>4</Position>
+      <DataType>varchar(300)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="26" parent="12" name="fm_price">
+      <Position>5</Position>
+      <DataType>varchar(300)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="27" parent="12" name="PRIMARY">
+      <ColNames>fm_file_name</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="28" parent="12" name="fk_field_mapping_1">
+      <ColNames>fm_file_name</ColNames>
+      <RefSchemaName>pricelist_db</RefSchemaName>
+      <RefTableName>file</RefTableName>
+      <RefColNames>fi_file_name</RefColNames>
+      <OnUpdate>update</OnUpdate>
+      <OnDelete>delete</OnDelete>
+    </foreign-key>
+    <column id="29" parent="13" name="fi_file_name">
+      <Position>1</Position>
+      <DataType>varchar(45)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="30" parent="13" name="PRIMARY">
       <ColNames>fi_file_name</ColNames>
       <Primary>1</Primary>
     </key>

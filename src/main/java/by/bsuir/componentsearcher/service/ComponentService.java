@@ -1,6 +1,7 @@
 package by.bsuir.componentsearcher.service;
 
 import by.bsuir.componentsearcher.domain.Component;
+import by.bsuir.componentsearcher.service.exception.CanNotParseException;
 import by.bsuir.componentsearcher.service.exception.UnknownContentTypeException;
 import by.bsuir.componentsearcher.service.exception.WriterNotFoundException;
 import org.springframework.web.multipart.MultipartFile;
@@ -13,5 +14,5 @@ import java.io.IOException;
 public interface ComponentService {
     Component findByCode(String code);
 
-    void insertNewFile(MultipartFile multipartFile) throws IOException, UnknownContentTypeException, WriterNotFoundException;
+    void insertNewFile(MultipartFile multipartFile) throws IOException, UnknownContentTypeException, WriterNotFoundException, CanNotParseException;
 }

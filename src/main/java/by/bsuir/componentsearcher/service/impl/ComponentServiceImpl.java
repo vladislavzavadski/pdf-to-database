@@ -7,6 +7,7 @@ import by.bsuir.componentsearcher.domain.FieldMapping;
 import by.bsuir.componentsearcher.service.ComponentService;
 import by.bsuir.componentsearcher.service.Parser;
 import by.bsuir.componentsearcher.service.RowMapper;
+import by.bsuir.componentsearcher.service.exception.CanNotParseException;
 import by.bsuir.componentsearcher.service.exception.UnknownContentTypeException;
 import by.bsuir.componentsearcher.service.exception.WriterNotFoundException;
 import by.bsuir.componentsearcher.service.util.ParserFactory;
@@ -43,11 +44,16 @@ public class ComponentServiceImpl implements ComponentService {
 
     @Override
     @Transactional
-    public void insertNewFile(MultipartFile multipartFile) throws IOException, UnknownContentTypeException, WriterNotFoundException {
+    public void insertNewFile(MultipartFile multipartFile)
+            throws IOException, UnknownContentTypeException, WriterNotFoundException, CanNotParseException {
 
         FieldMapping fieldMapping = mappingDao.getFileFieldMapping(multipartFile.getOriginalFilename());
         Parser parser = parserFactory.getParser(multipartFile.getContentType());
-        List<Component> components = parser.parse(multipartFile.getInputStream(), rowMapper, fieldMapping);
+        List<Component> components = parser.parse(multipartFile, rowMapper, fieldMapping);
+
+        if(components.isEmpty()){
+            throw new CanNotParseException("Current file is empty or invalid field mapping");
+        }
 
         componentDao.deleteFileComponents(multipartFile.getOriginalFilename());
         componentDao.createFile(multipartFile.getOriginalFilename());

@@ -4,13 +4,14 @@ import by.bsuir.componentsearcher.service.Parser;
 import by.bsuir.componentsearcher.service.exception.UnknownContentTypeException;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import static by.bsuir.componentsearcher.ContentType.CONTENT_EXCEL;
+import static by.bsuir.componentsearcher.ContentType.SPRED_SHEET;
+
 /**
  * Created by ulza1116 on 3/13/2017.
  */
 public final class ParserFactory {
     private static final ParserFactory parserFactory = new ParserFactory();
-    private static final String CONTENT_EXCEL = "application/vnd.ms-excel";
-    private static final String SPRED_SHEET = "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet";
 
     @Autowired
     private Parser excelParser;

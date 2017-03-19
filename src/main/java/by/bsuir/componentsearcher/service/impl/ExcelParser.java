@@ -1,22 +1,24 @@
 package by.bsuir.componentsearcher.service.impl;
 
 
-import by.bsuir.componentsearcher.ColumnName;
 import by.bsuir.componentsearcher.domain.Component;
 import by.bsuir.componentsearcher.domain.FieldMapping;
 import by.bsuir.componentsearcher.service.Parser;
 import by.bsuir.componentsearcher.service.RowMapper;
+import by.bsuir.componentsearcher.service.exception.UnknownContentTypeException;
 import by.bsuir.componentsearcher.service.exception.WriterNotFoundException;
+import by.bsuir.componentsearcher.service.util.FieldMappingUtil;
 import by.bsuir.componentsearcher.service.util.FieldWriter;
 import by.bsuir.componentsearcher.service.util.FieldWriterMapper;
-import org.apache.poi.hssf.usermodel.HSSFWorkbook;
+import by.bsuir.componentsearcher.service.util.WorkBookFactory;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
+import org.apache.poi.ss.usermodel.Workbook;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
-import java.io.InputStream;
-import java.net.InetAddress;
 import java.util.*;
 
 /**
@@ -25,20 +27,21 @@ import java.util.*;
 @org.springframework.stereotype.Component
 public class ExcelParser implements Parser {
 
-    private static final String PLUS = "\\+";
-
     @Autowired
     private FieldWriterMapper fieldWriterMapper;
 
+    @Autowired
+    private WorkBookFactory workBookFactory;
+
     @Override
-    public List<Component> parse(InputStream inputStream, RowMapper<Row> rowMapper, FieldMapping fieldMapping) throws IOException, WriterNotFoundException {
+    public List<Component> parse(MultipartFile multipartFile, RowMapper<Row> rowMapper, FieldMapping fieldMapping) throws IOException, WriterNotFoundException, UnknownContentTypeException {
 
         boolean canStartScan = false;
         List<Component> components = new ArrayList<>();
-        HSSFWorkbook hssfWorkbook = new HSSFWorkbook(inputStream);
+        Workbook hssfWorkbook = workBookFactory.getWorkBook(multipartFile);
 
         Sheet sheet = hssfWorkbook.getSheetAt(0);
-        Map<String, List<String>> mapFieldMapping = getMapFieldMapping(fieldMapping);
+        Map<String, List<String>> mapFieldMapping = FieldMappingUtil.getMapFieldMapping(fieldMapping);
 
         Map<Integer, FieldWriter> fieldWriterMap = null;
 
@@ -65,18 +68,4 @@ public class ExcelParser implements Parser {
         return components;
     }
 
-    private Map<String, List<String>> getMapFieldMapping(FieldMapping fieldMapping){
-        Map<String, List<String>> map = new HashMap<>();
-
-        map.put(ColumnName.NAME, Arrays.asList(fieldMapping.getName().trim().split(PLUS)));
-        map.put(ColumnName.CODE, Arrays.asList(fieldMapping.getCode().trim().split(PLUS)));
-
-        if(!fieldMapping.getManufacturer().contains(QUOTE)) {
-            map.put(ColumnName.MANUFACTURER, Arrays.asList(fieldMapping.getManufacturer().trim().split(PLUS)));
-        }
-
-        map.put(ColumnName.PRICE, Arrays.asList(fieldMapping.getPrice().trim().split(PLUS)));
-        
-        return map;
-    }
 }

@@ -3,6 +3,7 @@ package by.bsuir.componentsearcher.controller;
 import by.bsuir.componentsearcher.domain.Component;
 import by.bsuir.componentsearcher.domain.FieldMapping;
 import by.bsuir.componentsearcher.service.ComponentService;
+import by.bsuir.componentsearcher.service.exception.CanNotParseException;
 import by.bsuir.componentsearcher.service.exception.UnknownContentTypeException;
 import by.bsuir.componentsearcher.service.exception.WriterNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -37,7 +38,7 @@ public class FrontController {
 
     @RequestMapping(method = RequestMethod.POST)
     public ResponseEntity<String> insertFile(@RequestParam("file") MultipartFile multipartFile)
-            throws IOException, UnknownContentTypeException, WriterNotFoundException {
+            throws IOException, UnknownContentTypeException, WriterNotFoundException, CanNotParseException {
 
         componentService.insertNewFile(multipartFile);
         return new ResponseEntity<>(SUCCESS, HttpStatus.OK);
@@ -51,5 +52,10 @@ public class FrontController {
     @ExceptionHandler(UnknownContentTypeException.class)
     public ResponseEntity<String> unknownContentTypeException(UnknownContentTypeException ex){
         return new ResponseEntity<>("Invalid content type", HttpStatus.BAD_REQUEST);
+    }
+
+    @ExceptionHandler(CanNotParseException.class)
+    public ResponseEntity<String> canNotParseException(CanNotParseException ex){
+        return new ResponseEntity<String>(ex.getMessage(), HttpStatus.BAD_REQUEST);
     }
 }
