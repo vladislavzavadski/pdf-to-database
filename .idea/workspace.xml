@@ -3,12 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="de817ffd-fe04-43f3-be4a-0a680176ea12" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/by/bsuir/componentsearcher/service/RowMapper.java" afterPath="$PROJECT_DIR$/src/main/java/by/bsuir/componentsearcher/service/RowMapper.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/by/bsuir/componentsearcher/service/impl/ExcelParser.java" afterPath="$PROJECT_DIR$/src/main/java/by/bsuir/componentsearcher/service/impl/ExcelParser.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/by/bsuir/componentsearcher/service/impl/ExcelRowMapper.java" afterPath="$PROJECT_DIR$/src/main/java/by/bsuir/componentsearcher/service/impl/ExcelRowMapper.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/by/bsuir/componentsearcher/service/util/FieldMappingUtil.java" afterPath="$PROJECT_DIR$/src/main/java/by/bsuir/componentsearcher/service/util/FieldMappingUtil.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/by/bsuir/componentsearcher/service/util/FieldWriterMapper.java" afterPath="$PROJECT_DIR$/src/main/java/by/bsuir/componentsearcher/service/util/FieldWriterMapper.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/by/bsuir/componentsearcher/service/util/FieldWriterMapperImpl.java" afterPath="$PROJECT_DIR$/src/main/java/by/bsuir/componentsearcher/service/util/FieldWriterMapperImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/pricelist_db.sql" afterPath="$PROJECT_DIR$/src/main/resources/pricelist_db.sql" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -43,7 +40,7 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ExcelRowMapper.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ExcelRowMapper.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/by/bsuir/componentsearcher/service/impl/ExcelRowMapper.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="468">
@@ -51,6 +48,36 @@
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FieldWriterMapper.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/by/bsuir/componentsearcher/service/util/FieldWriterMapper.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="126">
+              <caret line="11" column="17" lean-forward="false" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FieldWriterMapperImpl.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/by/bsuir/componentsearcher/service/util/FieldWriterMapperImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="252">
+              <caret line="23" column="9" lean-forward="true" selection-start-line="23" selection-start-column="9" selection-end-line="23" selection-end-column="9" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pricelist_db.sql" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/pricelist_db.sql">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="936">
+              <caret line="52" column="39" lean-forward="false" selection-start-line="52" selection-start-column="39" selection-end-line="52" selection-end-column="39" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -73,16 +100,6 @@
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ComponentServiceImpl.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/by/bsuir/componentsearcher/service/impl/ComponentServiceImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="339">
-              <caret line="47" column="12" lean-forward="false" selection-start-line="47" selection-start-column="12" selection-end-line="47" selection-end-column="12" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -114,31 +131,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="72">
               <caret line="20" column="18" lean-forward="false" selection-start-line="20" selection-start-column="18" selection-end-line="20" selection-end-column="18" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ComponentDaoImpl.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/by/bsuir/componentsearcher/dao/impl/ComponentDaoImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="288">
-              <caret line="25" column="65" lean-forward="false" selection-start-line="25" selection-start-column="65" selection-end-line="25" selection-end-column="65" />
-              <folding>
-                <marker date="1489931953896" expanded="true" signature="642:727" ph="SELECT code,... component" />
-                <marker date="1489931953896" expanded="true" signature="785:829" ph="delete from " />
-                <marker date="1489931953896" expanded="true" signature="892:1001" ph="INSERT INTO component... " />
-                <marker date="1489931953896" expanded="true" signature="1059:1176" ph="INSERT INTO file... " />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CanNotParseException.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/by/bsuir/componentsearcher/service/exception/CanNotParseException.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="108">
-              <caret line="6" column="40" lean-forward="true" selection-start-line="6" selection-start-column="40" selection-end-line="6" selection-end-column="40" />
               <folding />
             </state>
           </provider>
@@ -217,7 +209,6 @@
         <option value="$PROJECT_DIR$/src/main/java/by/bsuir/componentsearcher/dao/impl/MappingDaoImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/by/bsuir/componentsearcher/controller/MappingController.java" />
         <option value="$PROJECT_DIR$/src/main/java/by/bsuir/componentsearcher/dao/impl/ComponentDaoImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/pricelist_db.sql" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/by/bsuir/componentsearcher/service/Parser.java" />
         <option value="$PROJECT_DIR$/src/main/java/by/bsuir/componentsearcher/Main.java" />
@@ -232,6 +223,7 @@
         <option value="$PROJECT_DIR$/src/main/java/by/bsuir/componentsearcher/service/util/FieldMappingUtil.java" />
         <option value="$PROJECT_DIR$/src/main/java/by/bsuir/componentsearcher/service/impl/ExcelParser.java" />
         <option value="$PROJECT_DIR$/src/main/java/by/bsuir/componentsearcher/service/impl/ExcelRowMapper.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/pricelist_db.sql" />
       </list>
     </option>
   </component>
@@ -1204,7 +1196,7 @@
       <workItem from="1489386272673" duration="12616000" />
       <workItem from="1489434536569" duration="931000" />
       <workItem from="1489526431878" duration="961000" />
-      <workItem from="1489917629170" duration="21098000" />
+      <workItem from="1489917629170" duration="21226000" />
     </task>
     <task id="LOCAL-00001" summary="Refactor">
       <created>1489137356078</created>
@@ -1255,11 +1247,18 @@
       <option name="project" value="LOCAL" />
       <updated>1489938445949</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Add universal excel parsing">
+      <created>1489938926053</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1489938926053</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="88307000" />
+    <option name="totallyTimeSpent" value="88435000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1600" height="861" extended-state="6" />
@@ -1438,22 +1437,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/by/bsuir/componentsearcher/service/util/FieldWriterMapperImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36">
-          <caret line="27" column="81" lean-forward="false" selection-start-line="27" selection-start-column="81" selection-end-line="27" selection-end-column="81" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/by/bsuir/componentsearcher/service/util/FieldWriterMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="11" column="17" lean-forward="false" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/by/bsuir/componentsearcher/service/util/FieldWriterFactory.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="14">
@@ -1536,14 +1519,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
           <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/pricelist_db.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="774">
-          <caret line="43" column="48" lean-forward="true" selection-start-line="43" selection-start-column="48" selection-end-line="43" selection-end-column="48" />
           <folding />
         </state>
       </provider>
@@ -1773,6 +1748,30 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/by/bsuir/componentsearcher/service/util/FieldWriterMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="11" column="17" lean-forward="false" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/by/bsuir/componentsearcher/service/util/FieldWriterMapperImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="23" column="9" lean-forward="true" selection-start-line="23" selection-start-column="9" selection-end-line="23" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/pricelist_db.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="936">
+          <caret line="52" column="39" lean-forward="false" selection-start-line="52" selection-start-column="39" selection-end-line="52" selection-end-column="39" />
+          <folding />
         </state>
       </provider>
     </entry>

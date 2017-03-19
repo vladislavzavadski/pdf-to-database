@@ -52,13 +52,13 @@ DROP TABLE IF EXISTS `field_mapping`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `field_mapping` (
-  `fm_file_name` varchar(45) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `fm_manufacturer` varchar(300) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `fm_code` varchar(300) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `fm_name` varchar(300) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `fm_price` varchar(300) COLLATE utf8mb4_unicode_ci NOT NULL,
-  PRIMARY KEY (`fm_file_name`),
-  CONSTRAINT `fk_field_mapping_1` FOREIGN KEY (`fm_file_name`) REFERENCES `file` (`fi_file_name`) ON DELETE CASCADE ON UPDATE CASCADE
+  `file_name` varchar(45) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `manufacturer` varchar(300) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `code` varchar(300) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `name` varchar(300) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `price` varchar(300) COLLATE utf8mb4_unicode_ci NOT NULL,
+  PRIMARY KEY (`file_name`),
+  CONSTRAINT `fk_field_mapping_1` FOREIGN KEY (`file_name`) REFERENCES `file` (`fi_file_name`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
