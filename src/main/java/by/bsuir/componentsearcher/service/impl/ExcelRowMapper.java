@@ -24,7 +24,7 @@ public class ExcelRowMapper implements RowMapper<Row> {
 
         for (Cell cell : row){
             if(cell != null && cell.getCellType() == Cell.CELL_TYPE_STRING){
-                temp.remove(cell.getStringCellValue().replace('\n', ' ').replaceAll(EMPTY_SUMBOL_REG_EXP, SPACE));
+                temp.remove(cell.getStringCellValue().trim().replace('\n', ' ').replaceAll(EMPTY_SUMBOL_REG_EXP, SPACE));
             }
         }
 

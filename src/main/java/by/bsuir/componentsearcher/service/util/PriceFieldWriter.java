@@ -9,6 +9,6 @@ public class PriceFieldWriter implements FieldWriter {
 
     @Override
     public void setField(Component component, String fieldValue) {
-        component.setPrice(Double.parseDouble(fieldValue));
+        component.setPrice(fieldValue);
     }
 }

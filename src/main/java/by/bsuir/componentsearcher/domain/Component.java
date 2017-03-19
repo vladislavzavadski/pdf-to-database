@@ -9,7 +9,7 @@ public class Component implements Serializable{
     private String code;
     private String manufacturer;
     private String name;
-    private double price;
+    private String price;
 
     public String getCode() {
         return code;
@@ -35,11 +35,11 @@ public class Component implements Serializable{
         this.name = name;
     }
 
-    public double getPrice() {
+    public String getPrice() {
         return price;
     }
 
-    public void setPrice(double price) {
+    public void setPrice(String price) {
         this.price = price;
     }
 
@@ -50,22 +50,19 @@ public class Component implements Serializable{
 
         Component component = (Component) o;
 
-        if (Double.compare(component.price, price) != 0) return false;
         if (code != null ? !code.equals(component.code) : component.code != null) return false;
         if (manufacturer != null ? !manufacturer.equals(component.manufacturer) : component.manufacturer != null)
             return false;
-        return name != null ? name.equals(component.name) : component.name == null;
+        if (name != null ? !name.equals(component.name) : component.name != null) return false;
+        return price != null ? price.equals(component.price) : component.price == null;
     }
 
     @Override
     public int hashCode() {
-        int result;
-        long temp;
-        result = code != null ? code.hashCode() : 0;
+        int result = code != null ? code.hashCode() : 0;
         result = 31 * result + (manufacturer != null ? manufacturer.hashCode() : 0);
         result = 31 * result + (name != null ? name.hashCode() : 0);
-        temp = Double.doubleToLongBits(price);
-        result = 31 * result + (int) (temp ^ (temp >>> 32));
+        result = 31 * result + (price != null ? price.hashCode() : 0);
         return result;
     }
 
@@ -75,7 +72,7 @@ public class Component implements Serializable{
                 "code='" + code + '\'' +
                 ", manufacturer='" + manufacturer + '\'' +
                 ", name='" + name + '\'' +
-                ", price=" + price +
+                ", price='" + price + '\'' +
                 '}';
     }
 }

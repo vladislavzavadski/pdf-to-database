@@ -34,7 +34,8 @@ public class ExcelParser implements Parser {
     private WorkBookFactory workBookFactory;
 
     @Override
-    public List<Component> parse(MultipartFile multipartFile, RowMapper<Row> rowMapper, FieldMapping fieldMapping) throws IOException, WriterNotFoundException, UnknownContentTypeException {
+    public List<Component> parse(MultipartFile multipartFile, RowMapper<Row> rowMapper, FieldMapping fieldMapping)
+            throws IOException, WriterNotFoundException, UnknownContentTypeException {
 
         boolean canStartScan = false;
         List<Component> components = new ArrayList<>();

@@ -11,6 +11,9 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import static by.bsuir.componentsearcher.service.RowMapper.EMPTY_SUMBOL_REG_EXP;
+import static by.bsuir.componentsearcher.service.RowMapper.SPACE;
+
 /**
  * Created by ulza1116 on 3/15/2017.
  */
@@ -29,7 +32,7 @@ public class FieldWriterMapperImpl implements FieldWriterMapper {
         Map<Integer, FieldWriter> fieldWriterMap = new HashMap<>();
 
         for(Cell cell : row){
-            String cellValue = cell.getStringCellValue().replace('\n', ' ');
+            String cellValue = cell.getStringCellValue().trim().replace('\n', ' ').replaceAll(EMPTY_SUMBOL_REG_EXP, SPACE);
 
             if(fieldMapping.get(ColumnName.CODE).contains(cellValue)){
                 fieldWriterMap.put(cell.getColumnIndex(), fieldWriterFactory.getFieldWriter(ColumnName.CODE));

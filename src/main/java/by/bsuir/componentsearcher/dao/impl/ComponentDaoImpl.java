@@ -34,7 +34,7 @@ public class ComponentDaoImpl implements ComponentDao {
         component.setCode(rs.getString(ColumnName.CODE));
         component.setManufacturer(rs.getString(ColumnName.MANUFACTURER));
         component.setName(rs.getString(ColumnName.NAME));
-        component.setPrice(rs.getDouble(ColumnName.PRICE));
+        component.setPrice(rs.getString(ColumnName.PRICE));
 
         return component;
     };
@@ -67,7 +67,7 @@ public class ComponentDaoImpl implements ComponentDao {
             ps.setString(1, argument.getCode());
             ps.setString(2, argument.getManufacturer());
             ps.setString(3, argument.getName());
-            ps.setDouble(4, argument.getPrice());
+            ps.setString(4, argument.getPrice());
             ps.setString(5, fileName);
         });
     }

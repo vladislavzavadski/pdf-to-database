@@ -26,7 +26,7 @@ CREATE TABLE `component` (
   `code` varchar(45) COLLATE utf8mb4_unicode_ci NOT NULL,
   `manufacturer` varchar(600) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `name` varchar(600) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `price` decimal(10,2) DEFAULT NULL,
+  `price` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `co_file_name` varchar(45) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`code`),
   KEY `fk_component_1_idx` (`co_file_name`),
@@ -40,7 +40,6 @@ CREATE TABLE `component` (
 
 LOCK TABLES `component` WRITE;
 /*!40000 ALTER TABLE `component` DISABLE KEYS */;
-
 /*!40000 ALTER TABLE `component` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -68,7 +67,6 @@ CREATE TABLE `field_mapping` (
 
 LOCK TABLES `field_mapping` WRITE;
 /*!40000 ALTER TABLE `field_mapping` DISABLE KEYS */;
-INSERT INTO `field_mapping` VALUES ('WD_Pricelist_2016_from_01_05_2016.xls','rtyu','hbjnkm','hgbjn','45.6');
 /*!40000 ALTER TABLE `field_mapping` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -91,7 +89,6 @@ CREATE TABLE `file` (
 
 LOCK TABLES `file` WRITE;
 /*!40000 ALTER TABLE `file` DISABLE KEYS */;
-INSERT INTO `file` VALUES ('123'),('WD_Pricelist_2016_from_01_05_2016.xls');
 /*!40000 ALTER TABLE `file` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -104,4 +101,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-03-13  0:07:01
+-- Dump completed on 2017-03-19 19:44:33
