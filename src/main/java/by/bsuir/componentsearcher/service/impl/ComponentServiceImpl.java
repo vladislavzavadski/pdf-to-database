@@ -32,9 +32,6 @@ public class ComponentServiceImpl implements ComponentService {
     private MappingDao mappingDao;
 
     @Autowired
-    private RowMapper rowMapper;
-
-    @Autowired
     private ParserFactory parserFactory;
 
     @Override
