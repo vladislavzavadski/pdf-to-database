@@ -8,6 +8,7 @@ import by.bsuir.componentsearcher.service.ComponentService;
 import by.bsuir.componentsearcher.service.Parser;
 import by.bsuir.componentsearcher.service.RowMapper;
 import by.bsuir.componentsearcher.service.exception.CanNotParseException;
+import by.bsuir.componentsearcher.service.exception.TooMuchResultException;
 import by.bsuir.componentsearcher.service.exception.UnknownContentTypeException;
 import by.bsuir.componentsearcher.service.exception.WriterNotFoundException;
 import by.bsuir.componentsearcher.service.util.ParserFactory;
@@ -37,6 +38,17 @@ public class ComponentServiceImpl implements ComponentService {
     @Override
     public Component findByCode(String code) {
         return componentDao.findByCode(code);
+    }
+
+    @Override
+    public List<Component> searchComponents(Component component) throws TooMuchResultException {
+        List<Component> components = componentDao.searchComponents(component);
+
+        if(components.size()>50){
+            throw new TooMuchResultException(components.size());
+        }
+
+        return components;
     }
 
     @Override

@@ -18,6 +18,8 @@ import java.util.List;
 @Repository
 public class ComponentDaoImpl implements ComponentDao {
 
+    private static final String PERCENT = "%";
+
     private static final String SEARCH_COMPONENT_BY_CODE_QUERY = "SELECT code, manufacturer, name, price from component" +
             " where code = ?;";
 
@@ -28,6 +30,9 @@ public class ComponentDaoImpl implements ComponentDao {
 
     private static final String CREATE_FILE_QUERY = "INSERT INTO file (fi_file_name) VALUES (?) on duplicate KEY " +
             "update fi_file_name=VALUES(fi_file_name);";
+
+    private static final String SEARCH_COMPONENTS_QUERY = "SELECT code, manufacturer, name, price from component" +
+            " where code like ? and name like ? and manufacturer like ?;";
 
     private static final RowMapper<Component> rowMapper = (rs, rowNum) -> {
         Component component = new Component();
@@ -50,6 +55,13 @@ public class ComponentDaoImpl implements ComponentDao {
     @Override
     public Component findByCode(String code) {
         return jdbcTemplate.queryForObject(SEARCH_COMPONENT_BY_CODE_QUERY, new Object[]{code}, rowMapper);
+    }
+
+    @Override
+    public List<Component> searchComponents(Component component){
+        return jdbcTemplate.query(SEARCH_COMPONENTS_QUERY,
+                new Object[]{PERCENT + component.getCode() + PERCENT, PERCENT + component.getName() + PERCENT,
+                        PERCENT + component.getManufacturer() + PERCENT}, rowMapper);
     }
 
     @Override
