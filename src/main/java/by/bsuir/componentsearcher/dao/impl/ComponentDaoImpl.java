@@ -6,7 +6,6 @@ import by.bsuir.componentsearcher.domain.Component;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
-import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Repository;
 
 import javax.sql.DataSource;
@@ -32,7 +31,10 @@ public class ComponentDaoImpl implements ComponentDao {
             "update fi_file_name=VALUES(fi_file_name);";
 
     private static final String SEARCH_COMPONENTS_QUERY = "SELECT code, manufacturer, name, price from component" +
-            " where code like ? and name like ? and manufacturer like ?;";
+            " where code like ? and name like ? and manufacturer like ? limit ?, ?;";
+
+    private static final String GET_COMPONENTS_COUNT = "select count(*) from component " +
+            "where code like ? and name like ? and manufacturer like ?";
 
     private static final RowMapper<Component> rowMapper = (rs, rowNum) -> {
         Component component = new Component();
@@ -58,10 +60,19 @@ public class ComponentDaoImpl implements ComponentDao {
     }
 
     @Override
-    public List<Component> searchComponents(Component component){
+    public List<Component> searchComponents(Component component, int limit, int startFrom){
+
         return jdbcTemplate.query(SEARCH_COMPONENTS_QUERY,
                 new Object[]{PERCENT + component.getCode() + PERCENT, PERCENT + component.getName() + PERCENT,
-                        PERCENT + component.getManufacturer() + PERCENT}, rowMapper);
+                        PERCENT + component.getManufacturer() + PERCENT, startFrom, limit}, rowMapper);
+    }
+
+    @Override
+    public int getSearchedComponentsNumber(Component component){
+
+        return jdbcTemplate.queryForObject(GET_COMPONENTS_COUNT, new Object[]{PERCENT + component.getCode() + PERCENT,
+                PERCENT + component.getName() + PERCENT,
+                PERCENT + component.getManufacturer() + PERCENT}, Integer.class);
     }
 
     @Override

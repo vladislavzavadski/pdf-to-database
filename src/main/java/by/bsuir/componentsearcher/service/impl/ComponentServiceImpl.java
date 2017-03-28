@@ -4,11 +4,11 @@ import by.bsuir.componentsearcher.dao.ComponentDao;
 import by.bsuir.componentsearcher.dao.MappingDao;
 import by.bsuir.componentsearcher.domain.Component;
 import by.bsuir.componentsearcher.domain.FieldMapping;
+import by.bsuir.componentsearcher.domain.ResponseComponent;
 import by.bsuir.componentsearcher.service.ComponentService;
 import by.bsuir.componentsearcher.service.Parser;
-import by.bsuir.componentsearcher.service.RowMapper;
 import by.bsuir.componentsearcher.service.exception.CanNotParseException;
-import by.bsuir.componentsearcher.service.exception.TooMuchResultException;
+import by.bsuir.componentsearcher.service.exception.InvalidParameterException;
 import by.bsuir.componentsearcher.service.exception.UnknownContentTypeException;
 import by.bsuir.componentsearcher.service.exception.WriterNotFoundException;
 import by.bsuir.componentsearcher.service.util.ParserFactory;
@@ -18,6 +18,7 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -41,14 +42,24 @@ public class ComponentServiceImpl implements ComponentService {
     }
 
     @Override
-    public List<Component> searchComponents(Component component) throws TooMuchResultException {
-        List<Component> components = componentDao.searchComponents(component);
+    public ResponseComponent searchComponents(Component component, int limit, int startFrom) throws InvalidParameterException {
 
-        if(components.size()>50){
-            throw new TooMuchResultException(components.size());
+        if(limit <= 0){
+            throw new InvalidParameterException("Parameter limit must be greater than 0");
+        }
+        if(startFrom < 0){
+            throw new InvalidParameterException("Parameter start from must be greater or equals to 0");
         }
 
-        return components;
+        int componentNumber = componentDao.getSearchedComponentsNumber(component);
+
+        List<Component> components = Collections.emptyList();
+
+        if(componentNumber != 0){
+            components = componentDao.searchComponents(component, limit, startFrom);
+        }
+
+        return new ResponseComponent(componentNumber, components);
     }
 
     @Override

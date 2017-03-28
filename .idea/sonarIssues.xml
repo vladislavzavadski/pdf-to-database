@@ -108,6 +108,11 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/by/bsuir/componentsearcher/domain/ResponseComponent.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/main/java/by/bsuir/componentsearcher/domain/User.java">
           <value>
             <set />
@@ -139,6 +144,11 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/src/main/java/by/bsuir/componentsearcher/service/exception/CanNotParseException.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/by/bsuir/componentsearcher/service/exception/InvalidParameterException.java">
           <value>
             <set />
           </value>

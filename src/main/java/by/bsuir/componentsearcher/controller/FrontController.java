@@ -1,9 +1,10 @@
 package by.bsuir.componentsearcher.controller;
 
 import by.bsuir.componentsearcher.domain.Component;
+import by.bsuir.componentsearcher.domain.ResponseComponent;
 import by.bsuir.componentsearcher.service.ComponentService;
 import by.bsuir.componentsearcher.service.exception.CanNotParseException;
-import by.bsuir.componentsearcher.service.exception.TooMuchResultException;
+import by.bsuir.componentsearcher.service.exception.InvalidParameterException;
 import by.bsuir.componentsearcher.service.exception.UnknownContentTypeException;
 import by.bsuir.componentsearcher.service.exception.WriterNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,7 +24,6 @@ import java.util.List;
 @RequestMapping("/component")
 public class FrontController {
 
-    private static final String SUCCESS = "success";
 
     @Autowired
     private ComponentService componentService;
@@ -35,19 +35,23 @@ public class FrontController {
     }
 
     @RequestMapping(method = RequestMethod.POST)
-    public ResponseEntity<String> insertFile(@RequestParam("file") MultipartFile multipartFile)
+    @ResponseStatus(HttpStatus.OK)
+    public void insertFile(@RequestParam("file") MultipartFile multipartFile)
             throws IOException, UnknownContentTypeException, WriterNotFoundException, CanNotParseException, InterruptedException {
 
         componentService.insertNewFile(multipartFile);
-        return new ResponseEntity<>(SUCCESS, HttpStatus.OK);
     }
 
     @RequestMapping(method = RequestMethod.GET)
-    public ResponseEntity<List<Component>> searchComponents(Component component) throws TooMuchResultException {
-        List<Component> components = componentService.searchComponents(component);
+    public ResponseEntity<ResponseComponent> searchComponents(Component component,
+                     @RequestParam(required = false, defaultValue = "23") int limit,
+                     @RequestParam(required = false, defaultValue = "1") int startFrom) throws InvalidParameterException {
+
+        ResponseComponent components = componentService.searchComponents(component, limit, startFrom);
 
         return new ResponseEntity<>(components, HttpStatus.OK);
     }
+
 
     @ExceptionHandler(EmptyResultDataAccessException.class)
     public ResponseEntity<String> componentNotExist(EmptyResultDataAccessException ex){
@@ -61,11 +65,11 @@ public class FrontController {
 
     @ExceptionHandler(CanNotParseException.class)
     public ResponseEntity<String> canNotParseException(CanNotParseException ex){
-        return new ResponseEntity<String>(ex.getMessage(), HttpStatus.BAD_REQUEST);
+        return new ResponseEntity<>(ex.getMessage(), HttpStatus.BAD_REQUEST);
     }
 
-    @ExceptionHandler(TooMuchResultException.class)
-    public ResponseEntity<Integer> tooMuchResultException(TooMuchResultException ex){
-        return new ResponseEntity<Integer>(ex.getResultCount(), HttpStatus.OK);
+    @ExceptionHandler(InvalidParameterException.class)
+    public ResponseEntity<String> tooMuchResultException(InvalidParameterException ex){
+        return new ResponseEntity<>(ex.getMessage(), HttpStatus.OK);
     }
 }

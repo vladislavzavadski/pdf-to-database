@@ -2,23 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="de817ffd-fe04-43f3-be4a-0a680176ea12" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/by/bsuir/componentsearcher/dao/UserDao.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/by/bsuir/componentsearcher/dao/impl/UserDaoImpl.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/by/bsuir/componentsearcher/domain/User.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/by/bsuir/componentsearcher/service/exception/TooMuchResultException.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources/b9484b35-eee7-4478-8169-997b1cab0655.xml" afterPath="$PROJECT_DIR$/.idea/dataSources/b9484b35-eee7-4478-8169-997b1cab0655.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/artifacts/componentsearcher_war.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/artifacts/componentsearcher_war_exploded.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/by/bsuir/componentsearcher/domain/ResponseComponent.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/by/bsuir/componentsearcher/service/exception/InvalidParameterException.java" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/by/bsuir/componentsearcher/service/exception/TooMuchResultException.java" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/sonarIssues.xml" afterPath="$PROJECT_DIR$/.idea/sonarIssues.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/by/bsuir/componentsearcher/ColumnName.java" afterPath="$PROJECT_DIR$/src/main/java/by/bsuir/componentsearcher/ColumnName.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/by/bsuir/componentsearcher/controller/FrontController.java" afterPath="$PROJECT_DIR$/src/main/java/by/bsuir/componentsearcher/controller/FrontController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/by/bsuir/componentsearcher/dao/ComponentDao.java" afterPath="$PROJECT_DIR$/src/main/java/by/bsuir/componentsearcher/dao/ComponentDao.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/by/bsuir/componentsearcher/dao/impl/ComponentDaoImpl.java" afterPath="$PROJECT_DIR$/src/main/java/by/bsuir/componentsearcher/dao/impl/ComponentDaoImpl.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/by/bsuir/componentsearcher/service/ComponentService.java" afterPath="$PROJECT_DIR$/src/main/java/by/bsuir/componentsearcher/service/ComponentService.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/by/bsuir/componentsearcher/service/impl/ComponentServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/by/bsuir/componentsearcher/service/impl/ComponentServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/application.properties" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -53,37 +48,31 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="application.properties" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="18">
-              <caret line="1" column="50" lean-forward="false" selection-start-line="1" selection-start-column="50" selection-end-line="1" selection-end-column="62" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pom.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="252">
-              <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="ComponentDaoImpl.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/by/bsuir/componentsearcher/dao/impl/ComponentDaoImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="209">
-              <caret line="63" column="71" lean-forward="false" selection-start-line="63" selection-start-column="71" selection-end-line="63" selection-end-column="71" />
+            <state relative-caret-position="129">
+              <caret line="66" column="89" lean-forward="false" selection-start-line="66" selection-start-column="89" selection-end-line="66" selection-end-column="89" />
               <folding>
-                <marker date="1490554878710" expanded="true" signature="746:831" ph="SELECT code,... component" />
-                <marker date="1490554878710" expanded="true" signature="889:933" ph="delete from " />
-                <marker date="1490554878710" expanded="true" signature="996:1105" ph="INSERT INTO component... " />
-                <marker date="1490554878710" expanded="true" signature="1163:1280" ph="INSERT INTO file... " />
-                <marker date="1490554878710" expanded="true" signature="1344:1472" ph="SELECT code,... component" />
+                <marker date="1490730236621" expanded="true" signature="690:775" ph="SELECT code,... component" />
+                <marker date="1490730236621" expanded="true" signature="833:877" ph="delete from " />
+                <marker date="1490730236621" expanded="true" signature="940:1049" ph="INSERT INTO component... " />
+                <marker date="1490730236621" expanded="true" signature="1107:1224" ph="INSERT INTO file... " />
+                <marker date="1490730236621" expanded="true" signature="1288:1416" ph="SELECT code,... component" />
+                <marker date="1490730236621" expanded="true" signature="1288:1427" ph="SELECT code,... component" />
+                <marker date="1490730236621" expanded="true" signature="1488:1593" ph="select count... component" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RowCallbackHandler.java" pinned="false" current-in-tab="false">
+        <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-jdbc/4.3.5.RELEASE/spring-jdbc-4.3.5.RELEASE-sources.jar!/org/springframework/jdbc/core/RowCallbackHandler.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-493">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#2350#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -92,8 +81,48 @@
       <file leaf-file-name="ComponentServiceImpl.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/by/bsuir/componentsearcher/service/impl/ComponentServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="389">
-              <caret line="47" column="62" lean-forward="false" selection-start-line="47" selection-start-column="62" selection-end-line="47" selection-end-column="62" />
+            <state relative-caret-position="644">
+              <caret line="61" column="0" lean-forward="false" selection-start-line="61" selection-start-column="0" selection-end-line="61" selection-end-column="0" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ResponseComponent.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/by/bsuir/componentsearcher/domain/ResponseComponent.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="378">
+              <caret line="21" column="42" lean-forward="false" selection-start-line="21" selection-start-column="42" selection-end-line="21" selection-end-column="42" />
+              <folding>
+                <element signature="e#538#539#0" expanded="true" />
+                <element signature="e#607#608#0" expanded="true" />
+                <element signature="e#671#672#0" expanded="true" />
+                <element signature="e#717#718#0" expanded="true" />
+                <element signature="e#750#751#0" expanded="true" />
+                <element signature="e#811#812#0" expanded="true" />
+                <element signature="e#855#856#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="InvalidParameterException.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/by/bsuir/componentsearcher/service/exception/InvalidParameterException.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="108">
+              <caret line="6" column="43" lean-forward="false" selection-start-line="6" selection-start-column="37" selection-end-line="6" selection-end-column="43" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ComponentDao.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/by/bsuir/componentsearcher/dao/ComponentDao.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="180">
+              <caret line="12" column="20" lean-forward="false" selection-start-line="12" selection-start-column="20" selection-end-line="12" selection-end-column="20" />
               <folding />
             </state>
           </provider>
@@ -102,33 +131,18 @@
       <file leaf-file-name="FrontController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/by/bsuir/componentsearcher/controller/FrontController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="450">
-              <caret line="67" column="59" lean-forward="false" selection-start-line="67" selection-start-column="59" selection-end-line="67" selection-end-column="59" />
+            <state relative-caret-position="324">
+              <caret line="45" column="43" lean-forward="false" selection-start-line="45" selection-start-column="43" selection-end-line="45" selection-end-column="43" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TooMuchResultException.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/by/bsuir/componentsearcher/service/exception/TooMuchResultException.java">
+      <file leaf-file-name="ComponentService.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/by/bsuir/componentsearcher/service/ComponentService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="234">
-              <caret line="13" column="39" lean-forward="false" selection-start-line="13" selection-start-column="39" selection-end-line="13" selection-end-column="39" />
-              <folding>
-                <element signature="e#218#219#0" expanded="true" />
-                <element signature="e#252#253#0" expanded="true" />
-                <element signature="e#305#306#0" expanded="true" />
-                <element signature="e#351#352#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UserDao.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/by/bsuir/componentsearcher/dao/UserDao.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+            <state relative-caret-position="198">
+              <caret line="19" column="22" lean-forward="false" selection-start-line="19" selection-start-column="22" selection-end-line="19" selection-end-column="22" />
               <folding />
             </state>
           </provider>
@@ -137,55 +151,11 @@
       <file leaf-file-name="UserDaoImpl.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/by/bsuir/componentsearcher/dao/impl/UserDaoImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="720">
+            <state relative-caret-position="641">
               <caret line="51" column="5" lean-forward="false" selection-start-line="51" selection-start-column="5" selection-end-line="51" selection-end-column="5" />
               <folding>
-                <element signature="imports" expanded="false" />
-                <element signature="e#1281#1282#0" expanded="false" />
-                <element signature="e#1340#1341#0" expanded="false" />
                 <marker date="1490130372878" expanded="true" signature="606:698" ph="SELECT usern... user" />
                 <marker date="1490130372878" expanded="true" signature="756:809" ph="SELECT autho... authority" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ColumnName.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/by/bsuir/componentsearcher/ColumnName.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="252">
-              <caret line="14" column="55" lean-forward="false" selection-start-line="14" selection-start-column="55" selection-end-line="14" selection-end-column="55" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="User.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/by/bsuir/componentsearcher/domain/User.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="42" lean-forward="false" selection-start-line="0" selection-start-column="42" selection-end-line="0" selection-end-column="42" />
-              <folding>
-                <element signature="e#332#333#0" expanded="false" />
-                <element signature="e#366#367#0" expanded="false" />
-                <element signature="e#426#427#0" expanded="false" />
-                <element signature="e#472#473#0" expanded="false" />
-                <element signature="e#507#508#0" expanded="false" />
-                <element signature="e#538#539#0" expanded="false" />
-                <element signature="e#586#587#0" expanded="false" />
-                <element signature="e#626#627#0" expanded="false" />
-                <element signature="e#661#662#0" expanded="false" />
-                <element signature="e#692#693#0" expanded="false" />
-                <element signature="e#740#741#0" expanded="false" />
-                <element signature="e#780#781#0" expanded="false" />
-                <element signature="e#815#816#0" expanded="false" />
-                <element signature="e#846#847#0" expanded="false" />
-                <element signature="e#894#895#0" expanded="false" />
-                <element signature="e#934#935#0" expanded="false" />
-                <element signature="e#969#970#0" expanded="false" />
-                <element signature="e#1000#1001#0" expanded="false" />
-                <element signature="e#1048#1049#0" expanded="false" />
-                <element signature="e#1088#1089#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -225,7 +195,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/by/bsuir/componentsearcher/domain/ErrorResponse.java" />
         <option value="$PROJECT_DIR$/src/main/java/by/bsuir/componentsearcher/PDFManager.java" />
         <option value="$PROJECT_DIR$/src/main/java/by/bsuir/componentsearcher/Parser.java" />
         <option value="$PROJECT_DIR$/src/main/java/by/bsuir/componentsearcher/Parser1.java" />
@@ -271,10 +240,12 @@
         <option value="$PROJECT_DIR$/src/main/java/by/bsuir/componentsearcher/config/SecurityConfig.java" />
         <option value="$PROJECT_DIR$/src/main/resources/application.properties" />
         <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/by/bsuir/componentsearcher/dao/impl/ComponentDaoImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/by/bsuir/componentsearcher/controller/FrontController.java" />
         <option value="$PROJECT_DIR$/src/main/java/by/bsuir/componentsearcher/service/exception/TooMuchResultException.java" />
+        <option value="$PROJECT_DIR$/src/main/java/by/bsuir/componentsearcher/service/exception/InvalidParameterException.java" />
         <option value="$PROJECT_DIR$/src/main/java/by/bsuir/componentsearcher/service/impl/ComponentServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/by/bsuir/componentsearcher/controller/FrontController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/by/bsuir/componentsearcher/domain/ResponseComponent.java" />
+        <option value="$PROJECT_DIR$/src/main/java/by/bsuir/componentsearcher/dao/impl/ComponentDaoImpl.java" />
       </list>
     </option>
   </component>
@@ -332,7 +303,7 @@
     </navigator>
     <panes>
       <pane id="PackagesPane" />
-      <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -478,6 +449,48 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="impl" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pdf-to-database" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pdf-to-database" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="by" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bsuir" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="componentsearcher" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="service" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="exception" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -681,7 +694,7 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -690,21 +703,22 @@
     <property name="nodejs_interpreter_path" value="/usr/bin/node" />
     <property name="js.eslint.eslintPackage" value="" />
     <property name="js-jscs-nodeInterpreter" value="/usr/bin/node" />
-    <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;jar:///home/vladislav/.m2/repository/org/springframework/spring-jdbc/4.3.5.RELEASE/spring-jdbc-4.3.5.RELEASE-sources.jar!/org/springframework/jdbc/core/ParameterizedPreparedStatementSetter.java&#10;Parameterized&#9;FILE&#9;jar:///home/vladislav/.m2/repository/org/springframework/spring-jdbc/4.3.5.RELEASE/spring-jdbc-4.3.5.RELEASE-sources.jar!/org/springframework/jdbc/core/ParameterizedPreparedStatementSetter.java&#10;Function&#9;PSI&#9;JAVA://java.util.function.Function&#10;ResultSetEx&#9;FILE&#9;jar:///home/vladislav/.m2/repository/org/springframework/spring-jdbc/4.3.5.RELEASE/spring-jdbc-4.3.5.RELEASE-sources.jar!/org/springframework/jdbc/core/ResultSetExtractor.java" />
+    <property name="SearchEverywhereHistoryKey" value="RowC&#9;FILE&#9;jar:///home/vladislav/.m2/repository/org/springframework/spring-jdbc/4.3.5.RELEASE/spring-jdbc-4.3.5.RELEASE-sources.jar!/org/springframework/jdbc/core/RowCallbackHandler.java&#10;RowCa&#9;FILE&#9;jar:///home/vladislav/.m2/repository/org/springframework/spring-jdbc/4.3.5.RELEASE/spring-jdbc-4.3.5.RELEASE-sources.jar!/org/springframework/jdbc/core/RowCallbackHandler.java&#10;Parameterized&#9;FILE&#9;jar:///home/vladislav/.m2/repository/org/springframework/spring-jdbc/4.3.5.RELEASE/spring-jdbc-4.3.5.RELEASE-sources.jar!/org/springframework/jdbc/core/ParameterizedPreparedStatementSetter.java&#10;Function&#9;PSI&#9;JAVA://java.util.function.Function&#10;ResultSetEx&#9;FILE&#9;jar:///home/vladislav/.m2/repository/org/springframework/spring-jdbc/4.3.5.RELEASE/spring-jdbc-4.3.5.RELEASE-sources.jar!/org/springframework/jdbc/core/ResultSetExtractor.java" />
     <property name="com.intellij.database.dataSource.DataSourceTemplate" value="MySQL" />
     <property name="restartRequiresConfirmation" value="false" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="last_opened_file_path" value="$USER_HOME$/Dropbox/pdf-to-database" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/java/by/bsuir/componentsearcher/service/util" />
+    </key>
     <key name="CreateClassDialog.RecentsKey">
       <recent name="by.bsuir.componentsearcher.service.exception" />
       <recent name="by.bsuir.componentsearcher.service.util" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/main/java/by/bsuir/componentsearcher/service/util" />
     </key>
   </component>
   <component name="RunManager" selected="Spring Boot.Main">
@@ -1169,7 +1183,10 @@
       <workItem from="1490121326724" duration="6559000" />
       <workItem from="1490295099805" duration="32000" />
       <workItem from="1490552937172" duration="515000" />
-      <workItem from="1490554131654" duration="1121000" />
+      <workItem from="1490554131654" duration="1249000" />
+      <workItem from="1490643636000" duration="1403000" />
+      <workItem from="1490680555022" duration="737000" />
+      <workItem from="1490727651632" duration="3309000" />
     </task>
     <task id="LOCAL-00001" summary="Refactor">
       <created>1489137356078</created>
@@ -1241,11 +1258,18 @@
       <option name="project" value="LOCAL" />
       <updated>1489982630273</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Implements component search">
+      <created>1490555289604</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1490555289604</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="110369000" />
+    <option name="totallyTimeSpent" value="115946000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1600" height="861" extended-state="6" />
@@ -1266,18 +1290,18 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.14032698" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24659401" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21798365" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.53678477" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28746593" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22343324" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26705277" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5762943" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33140284" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Maven-2 Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1338,7 +1362,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Refactor" />
     <MESSAGE value="Add universal excel parsing" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add universal excel parsing" />
+    <MESSAGE value="Implements component search" />
+    <option name="LAST_COMMIT_MESSAGE" value="Implements component search" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1356,7 +1381,7 @@
           <option name="timeStamp" value="60" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="61" />
+      <option name="time" value="63" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1365,60 +1390,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/by/bsuir/componentsearcher/service/impl/ComponentServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="684">
-          <caret line="57" column="37" lean-forward="false" selection-start-line="57" selection-start-column="37" selection-end-line="57" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/by/bsuir/componentsearcher/service/ComponentService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="18" column="12" lean-forward="false" selection-start-line="18" selection-start-column="12" selection-end-line="18" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/by/bsuir/componentsearcher/service/impl/ExcelParser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1098">
-          <caret line="79" column="47" lean-forward="false" selection-start-line="79" selection-start-column="47" selection-end-line="79" selection-end-column="47" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/8b8a05e1-363f-4de1-873e-2a857d4ecd8b/console.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/pricelist_db.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="594">
-          <caret line="33" column="29" lean-forward="false" selection-start-line="33" selection-start-column="29" selection-end-line="33" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="486">
-          <caret line="27" column="30" lean-forward="false" selection-start-line="27" selection-start-column="30" selection-end-line="27" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/by/bsuir/componentsearcher/service/impl/ComponentServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1026">
@@ -1629,13 +1600,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/by/bsuir/componentsearcher/service/ComponentService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="18" column="12" lean-forward="false" selection-start-line="18" selection-start-column="12" selection-end-line="18" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/pricelist_db.sql">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="594">
@@ -1647,13 +1611,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
           <caret line="16" column="13" lean-forward="false" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#1596#1597#0" expanded="false" />
-            <element signature="e#1655#1656#0" expanded="false" />
-            <marker date="1489960567073" expanded="true" signature="606:867" ph="INSERT INTO field_mapping... " />
-            <marker date="1489960567073" expanded="true" signature="930:1022" ph="SELECT code,... field_mapping" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1661,7 +1618,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
           <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1669,7 +1625,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="252">
           <caret line="14" column="55" lean-forward="false" selection-start-line="14" selection-start-column="55" selection-end-line="14" selection-end-column="55" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1698,20 +1653,6 @@
             <element signature="e#1000#1001#0" expanded="false" />
             <element signature="e#1048#1049#0" expanded="false" />
             <element signature="e#1088#1089#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/by/bsuir/componentsearcher/dao/impl/UserDaoImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="720">
-          <caret line="51" column="5" lean-forward="false" selection-start-line="51" selection-start-column="5" selection-end-line="51" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#1281#1282#0" expanded="false" />
-            <element signature="e#1340#1341#0" expanded="false" />
-            <marker date="1490130372878" expanded="true" signature="606:698" ph="SELECT usern... user" />
-            <marker date="1490130372878" expanded="true" signature="756:809" ph="SELECT autho... authority" />
           </folding>
         </state>
       </provider>
@@ -1748,46 +1689,136 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/by/bsuir/componentsearcher/service/impl/UserDetailsServiceImpl.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/by/bsuir/componentsearcher/config/SecurityConfig.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/by/bsuir/componentsearcher/dao/impl/ComponentDaoImpl.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/by/bsuir/componentsearcher/service/exception/TooMuchResultException.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="63" column="71" lean-forward="false" selection-start-line="63" selection-start-column="71" selection-end-line="63" selection-end-column="71" />
+        <state relative-caret-position="180">
+          <caret line="13" column="39" lean-forward="false" selection-start-line="13" selection-start-column="39" selection-end-line="13" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/by/bsuir/componentsearcher/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
           <folding>
-            <marker date="1490554878710" expanded="true" signature="746:831" ph="SELECT code,... component" />
-            <marker date="1490554878710" expanded="true" signature="889:933" ph="delete from " />
-            <marker date="1490554878710" expanded="true" signature="996:1105" ph="INSERT INTO component... " />
-            <marker date="1490554878710" expanded="true" signature="1163:1280" ph="INSERT INTO file... " />
-            <marker date="1490554878710" expanded="true" signature="1344:1472" ph="SELECT code,... component" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#352#353#0" expanded="false" />
+            <element signature="e#407#408#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/4.3.5.RELEASE/spring-web-4.3.5.RELEASE.jar!/org/springframework/web/bind/annotation/RequestMapping.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="29" column="20" lean-forward="false" selection-start-line="29" selection-start-column="20" selection-end-line="29" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/by/bsuir/componentsearcher/dao/impl/UserDaoImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="641">
+          <caret line="51" column="5" lean-forward="false" selection-start-line="51" selection-start-column="5" selection-end-line="51" selection-end-column="5" />
+          <folding>
+            <marker date="1490130372878" expanded="true" signature="606:698" ph="SELECT usern... user" />
+            <marker date="1490130372878" expanded="true" signature="756:809" ph="SELECT autho... authority" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/by/bsuir/componentsearcher/service/ComponentService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="19" column="22" lean-forward="false" selection-start-line="19" selection-start-column="22" selection-end-line="19" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/by/bsuir/componentsearcher/service/exception/InvalidParameterException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="6" column="43" lean-forward="false" selection-start-line="6" selection-start-column="37" selection-end-line="6" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-jdbc/4.3.5.RELEASE/spring-jdbc-4.3.5.RELEASE-sources.jar!/org/springframework/jdbc/core/RowCallbackHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-493">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#2350#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/Документы/jdk1.8.0_92/src.zip!/java/util/Collections.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-99">
+          <caret line="4426" column="25" lean-forward="false" selection-start-line="4426" selection-start-column="25" selection-end-line="4426" selection-end-column="25" />
+          <folding>
+            <element signature="e#175306#175307#0" expanded="false" />
+            <element signature="e#175349#175350#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/by/bsuir/componentsearcher/controller/FrontController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="67" column="59" lean-forward="false" selection-start-line="67" selection-start-column="59" selection-end-line="67" selection-end-column="59" />
+        <state relative-caret-position="324">
+          <caret line="45" column="43" lean-forward="false" selection-start-line="45" selection-start-column="43" selection-end-line="45" selection-end-column="43" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/by/bsuir/componentsearcher/service/exception/TooMuchResultException.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/by/bsuir/componentsearcher/domain/ResponseComponent.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="13" column="39" lean-forward="false" selection-start-line="13" selection-start-column="39" selection-end-line="13" selection-end-column="39" />
+        <state relative-caret-position="378">
+          <caret line="21" column="42" lean-forward="false" selection-start-line="21" selection-start-column="42" selection-end-line="21" selection-end-column="42" />
           <folding>
-            <element signature="e#218#219#0" expanded="true" />
-            <element signature="e#252#253#0" expanded="true" />
-            <element signature="e#305#306#0" expanded="true" />
-            <element signature="e#351#352#0" expanded="true" />
+            <element signature="e#538#539#0" expanded="true" />
+            <element signature="e#607#608#0" expanded="true" />
+            <element signature="e#671#672#0" expanded="true" />
+            <element signature="e#717#718#0" expanded="true" />
+            <element signature="e#750#751#0" expanded="true" />
+            <element signature="e#811#812#0" expanded="true" />
+            <element signature="e#855#856#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/by/bsuir/componentsearcher/dao/ComponentDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="20" lean-forward="false" selection-start-line="12" selection-start-column="20" selection-end-line="12" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/by/bsuir/componentsearcher/dao/impl/ComponentDaoImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="129">
+          <caret line="66" column="89" lean-forward="false" selection-start-line="66" selection-start-column="89" selection-end-line="66" selection-end-column="89" />
+          <folding>
+            <marker date="1490730236621" expanded="true" signature="690:775" ph="SELECT code,... component" />
+            <marker date="1490730236621" expanded="true" signature="833:877" ph="delete from " />
+            <marker date="1490730236621" expanded="true" signature="940:1049" ph="INSERT INTO component... " />
+            <marker date="1490730236621" expanded="true" signature="1107:1224" ph="INSERT INTO file... " />
+            <marker date="1490730236621" expanded="true" signature="1288:1416" ph="SELECT code,... component" />
+            <marker date="1490730236621" expanded="true" signature="1288:1427" ph="SELECT code,... component" />
+            <marker date="1490730236621" expanded="true" signature="1488:1593" ph="select count... component" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/by/bsuir/componentsearcher/service/impl/ComponentServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="389">
-          <caret line="47" column="62" lean-forward="false" selection-start-line="47" selection-start-column="62" selection-end-line="47" selection-end-column="62" />
-          <folding />
+        <state relative-caret-position="644">
+          <caret line="61" column="0" lean-forward="false" selection-start-line="61" selection-start-column="0" selection-end-line="61" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1797,10 +1828,12 @@
       <state key="ArtifactsStructureConfigurable.UI">
         <settings>
           <artifact-editor />
+          <last-edited>componentsearcher:war</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
                 <option value="0.2" />
+                <option value="0.5" />
               </list>
             </option>
           </splitter-proportions>
@@ -1808,7 +1841,7 @@
       </state>
       <state key="FacetStructureConfigurable.UI">
         <settings>
-          <last-edited>No facets are configured</last-edited>
+          <last-edited>Web</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>

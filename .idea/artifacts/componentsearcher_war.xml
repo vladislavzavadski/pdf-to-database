@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="componentsearcher:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <root id="archive" name="componentsearcher-1.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="componentsearcher:war exploded" />
+    </root>
+  </artifact>
+</component>
